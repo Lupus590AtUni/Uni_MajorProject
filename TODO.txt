@@ -14,11 +14,7 @@ identify corners/junctions
   
   
 place landmarks
-  tagged
-  script with variables
-    size?
-    colour
-    shape
+  See landmark plan
   list on hud
   update data collection to include landmarks
   
