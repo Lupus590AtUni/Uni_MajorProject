@@ -1,0 +1,37 @@
+preamble - do by 8th
+  grey boxes for mock city
+  understand unity pathfinding
+  waypoint system works
+  
+  destination switching, start location resetting
+    I think I got there
+  data collection
+  
+  
+  
+identify corners/junctions
+  list on hud
+  
+  
+place landmarks
+  tagged
+  script with variables
+    size?
+    colour
+    shape
+  list on hud
+  update data collection to include landmarks
+  
+  
+merge lists
+  pair turns with landmarks
+  remove redundent turns
+  
+  
+improve with natual language generation
+
+post
+  release
+  lit review
+  evaluate data
+    add to lit review
