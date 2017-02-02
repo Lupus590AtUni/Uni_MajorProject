@@ -5,7 +5,7 @@ preamble - do by 8th
   waypoint system works
   
   destination switching, start location resetting
-    I think I got there
+    I think I got there button
   data collection
   
   
