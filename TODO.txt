@@ -1,16 +1,17 @@
 preamble - do by 8th
   grey boxes for mock city - done
     bake navmesh - done
-  understand unity pathfinding
-  waypoint system works
+  understand unity pathfinding - understand theory
+  waypoint system works - done
   
-  destination switching, start location resetting
+  
+  destination switching, start location resetting - do by 15th
     I think I got there button
   data collection
   
   
   
-identify corners/junctions
+identify corners/junctions - do by 15th
   list on hud
   
   
