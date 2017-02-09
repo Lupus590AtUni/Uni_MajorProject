@@ -13,7 +13,7 @@ public class Navigator : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
-        print("Navigator Script: started");
+        //print("Navigator Script: started");
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.destination = goal.position;
         //agent.path

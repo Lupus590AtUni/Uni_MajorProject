@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     {
 		if(Input.GetButton("Fire1"))
         {
-            print("FIRE!");
+            //print("FIRE!");
         }
 	}
 }
