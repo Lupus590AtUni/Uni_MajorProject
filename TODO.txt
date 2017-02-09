@@ -27,6 +27,7 @@ merge lists
   
   
 improve with natual language generation
+improve GUI
 
 post
   release
