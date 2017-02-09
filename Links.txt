@@ -1,3 +1,2 @@
 https://analytics.cloud.unity3d.com/integration/3fe8ba72-57fa-4065-bfaf-7ef58c0b6661/?unity_version=
 
-Quest Marker: http://answers.unity3d.com/questions/1100614/unity-ui-how-to-make-an-image-draw-over-a-3d-objec.html
