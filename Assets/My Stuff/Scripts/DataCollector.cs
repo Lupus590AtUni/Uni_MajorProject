@@ -12,7 +12,7 @@ public class DataCollector : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
-        Analytics.CustomEvent();
+        //Analytics.CustomEvent();
 
         
 	}
