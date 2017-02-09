@@ -29,7 +29,7 @@ public class DataCollector : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-	    if(recordMode)
+	    if(recordMode && !gameController.isPaused())
         {
             // Track the time taken
             timeTaken += Time.deltaTime;
@@ -38,7 +38,7 @@ public class DataCollector : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(recordMode)
+        if(recordMode && !gameController.isPaused())
         {
             // Log player location
             playerRoute.Add(player.transform.position);

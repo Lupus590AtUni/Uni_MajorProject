@@ -7,11 +7,32 @@ public class GameController : MonoBehaviour
     public Transform goal;
     private DataCollector dataCollector;
 
-	// Use this for initialization
-	void Start ()
+    private bool pauseState = false;
+
+    public bool isPaused()
+    {
+        return pauseState;
+    }
+    
+    public void pause()
+    {
+        pauseState = true;
+        Time.timeScale = 0;
+    }
+
+    public void resume()
+    {
+        pauseState = false;
+        Time.timeScale = 1;
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         dataCollector = FindObjectOfType<DataCollector>();
         //print("Game Script: started");
+        
+
     }
 	
     void playerThinksTheyAreThere()
@@ -27,6 +48,17 @@ public class GameController : MonoBehaviour
 		if(Input.GetButtonUp("Fire1"))
         {
             playerThinksTheyAreThere();
+        }
+        if(Input.GetButtonUp("Pause"))
+        {
+            if(isPaused())
+            {
+                resume();
+            }
+            else
+            {
+                pause();
+            }
         }
 	}
 }

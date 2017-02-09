@@ -9,10 +9,13 @@ public class GuiController : MonoBehaviour
 
     [SerializeField] private Rect directionsBox;
 
-	// Use this for initialization
-	void Start()
+    private GameController gameController;
+
+    // Use this for initialization
+    void Start()
     {
         //print("GUI Script: started");
+        gameController = FindObjectOfType<GameController>();
     }
 	
 	// Update is called once per frame
@@ -23,21 +26,29 @@ public class GuiController : MonoBehaviour
 
     void OnGUI()
     {
-
-        GUI.BeginGroup(directionsBox);
-        // Make a background box
-        GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Directions");
-
-        int yPos = 20;
-
-        //print("directions.Count: "+ directions.Count);
-        for(int i = 0; i< directions.Count; i++)
+        if(gameController.isPaused())
         {
-            GUI.Label(new Rect(5, yPos, directionsBox.size.x - 5, 1000), directions[i]);
-            yPos += 15;
-        }
+            // Pause Menu
 
-        GUI.EndGroup();
+        }
+        else
+        {
+            // Normal Hud
+            GUI.BeginGroup(directionsBox);
+            // Make a background box
+            GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Directions");
+
+            int yPos = 20;
+
+            //print("directions.Count: "+ directions.Count);
+            for(int i = 0; i < directions.Count; i++)
+            {
+                GUI.Label(new Rect(5, yPos, directionsBox.size.x - 5, 1000), directions[i]);
+                yPos += 15;
+            }
+
+            GUI.EndGroup();
+        }
 
         
     }
