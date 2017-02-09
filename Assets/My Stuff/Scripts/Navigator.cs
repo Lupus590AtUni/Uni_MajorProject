@@ -34,11 +34,11 @@ public class Navigator : MonoBehaviour
         agent.destination = goal.position;
 
         print("agent.path.corners.Length: " + agent.path.corners.Length);
-        /*for(int i = 0; i<agent.path.corners.Length; i++)
+        for(int i = 0; i<agent.path.corners.Length; i++)
         {
-            guiController.directions.Add(node.ToString());
+            guiController.directions.Add(agent.path.corners[i].ToString());
             i++;
-        }*/
+        }
         
     }
 
