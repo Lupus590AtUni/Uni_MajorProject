@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        print("Game Script: started");
+        //print("Game Script: started");
     }
 	
     void playerThinksTheyAreThere()
