@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class GuiController : MonoBehaviour
 {
+    public string[] directions;
+
+    [SerializeField]
+    private Rect directionsBox;
 
 	// Use this for initialization
 	void Start()
@@ -20,19 +24,21 @@ public class GuiController : MonoBehaviour
 
     void OnGUI()
     {
+
+        GUI.BeginGroup(directionsBox);
         // Make a background box
-        GUI.Box(new Rect(10, 10, 100, 90), "Loader Menu");
+        GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Directions");
 
-        // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        if(GUI.Button(new Rect(20, 40, 80, 20), "Level 1"))
+        int yPos = 20;
+
+        foreach(string s in directions)
         {
-            print(1);
+            GUI.Label(new Rect(5, yPos, directionsBox.size.x - 5, 1000), s);
+            yPos += 15;
         }
 
-        // Make the second button.
-        if(GUI.Button(new Rect(20, 70, 80, 20), "Level 2"))
-        {
-            print(2);
-        }
+        GUI.EndGroup();
+
+        
     }
 }
