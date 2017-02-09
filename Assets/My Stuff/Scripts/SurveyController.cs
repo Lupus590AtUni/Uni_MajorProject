@@ -13,4 +13,9 @@ public class SurveyController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnGUI()
+    {
+
+    }
 }

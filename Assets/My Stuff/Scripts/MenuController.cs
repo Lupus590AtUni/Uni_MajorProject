@@ -13,4 +13,9 @@ public class MenuController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnGUI()
+    {
+
+    }
 }
