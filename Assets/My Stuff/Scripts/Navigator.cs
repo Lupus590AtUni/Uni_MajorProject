@@ -8,20 +8,38 @@ public class Navigator : MonoBehaviour
     // https://docs.unity3d.com/Manual/nav-CreateNavMeshAgent.html
 
     public Transform goal;
-    public Transform gameController;
+    public GuiController guiController;
+    private NavMeshAgent agent;
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
     {
+
         //print("Navigator Script: started");
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
-        //agent.path
+        agent = GetComponent<NavMeshAgent>();
+
+        recalcPath();
+
+
     }
 
     void findLandmarks()
     {
 
+    }
+
+    void recalcPath()
+    {
+
+        agent.destination = goal.position;
+        
+        int i = 0;
+        foreach(Vector3 node in agent.path.corners)
+        {
+            guiController.directions.Add(node.ToString());
+            i++;
+        }
+        
     }
 
 	// Update is called once per frame
