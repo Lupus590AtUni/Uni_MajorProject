@@ -34,6 +34,7 @@ public class Navigator : MonoBehaviour
         agent.destination = goal.position;
 
         print("agent.path.status: " + agent.path.status);
+        print("agent.isPathStale: " + agent.isPathStale);
 
         print("agent.path.corners.Length: " + agent.path.corners.Length);
         for(int i = 0; i<agent.path.corners.Length; i++)
