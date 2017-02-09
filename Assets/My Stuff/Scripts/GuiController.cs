@@ -9,8 +9,8 @@ public class GuiController : MonoBehaviour
 	// Use this for initialization
 	void Start()
     {
-		
-	}
+        print("GUI Script: started");
+    }
 	
 	// Update is called once per frame
 	void Update()
