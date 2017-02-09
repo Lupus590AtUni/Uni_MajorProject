@@ -5,11 +5,12 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public Transform goal;
-
+    [SerializeField] private DataCollector dataCollector;
 
 	// Use this for initialization
 	void Start ()
     {
+        
         //print("Game Script: started");
     }
 	
