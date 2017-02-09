@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public Transform goal;
+
 
 	// Use this for initialization
 	void Start ()
