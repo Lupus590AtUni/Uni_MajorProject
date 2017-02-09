@@ -7,13 +7,15 @@ public class Navigator : MonoBehaviour
 {
     // https://docs.unity3d.com/Manual/nav-CreateNavMeshAgent.html
 
-    [SerializeField] private GameController gameController;
-    [SerializeField] private GuiController guiController;
+    private GameController gameController;
+    private GuiController guiController;
     private NavMeshAgent agent;
 
     // Use this for initialization
     void Start()
     {
+        gameController = FindObjectOfType<GameController>();
+        guiController = FindObjectOfType<GuiController>();
 
         //print("Navigator Script: started");
         agent = GetComponent<NavMeshAgent>();

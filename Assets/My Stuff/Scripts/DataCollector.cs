@@ -9,8 +9,8 @@ using UnityEngine.Analytics;
 public class DataCollector : MonoBehaviour
 {
     private List<Vector3> playerRoute;
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameController gameController;
+    private GameObject player;
+    private GameController gameController;
 
     public bool recordMode;
     private float timeTaken;
@@ -19,7 +19,8 @@ public class DataCollector : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        gameController = FindObjectOfType<GameController>();
         //Analytics.CustomEvent();
         timeTaken = 0.0f;
         
