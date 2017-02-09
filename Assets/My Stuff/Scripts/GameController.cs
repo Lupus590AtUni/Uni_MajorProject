@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private Transform goal;
+    public Transform goal;
 
 
 	// Use this for initialization

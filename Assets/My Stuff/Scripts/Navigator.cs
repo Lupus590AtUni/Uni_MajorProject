@@ -7,7 +7,7 @@ public class Navigator : MonoBehaviour
 {
     // https://docs.unity3d.com/Manual/nav-CreateNavMeshAgent.html
 
-    [SerializeField] private Transform goal;
+    [SerializeField] private GameController gameController;
     [SerializeField] private GuiController guiController;
     private NavMeshAgent agent;
 
@@ -31,7 +31,7 @@ public class Navigator : MonoBehaviour
     void recalcPath()
     {
 
-        agent.destination = goal.position;
+        agent.destination = gameController.goal.position;
 
         print("agent.path.status: " + agent.path.status);
         print("agent.isPathStale: " + agent.isPathStale);

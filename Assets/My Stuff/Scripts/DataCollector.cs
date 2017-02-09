@@ -10,7 +10,7 @@ public class DataCollector : MonoBehaviour
 {
     private List<Vector3> playerRoute;
     [SerializeField] private GameObject player;
-    [SerializeField] private Transform goal;
+    [SerializeField] private GameController gameController;
 
     public bool recordMode;
     private float timeTaken;
