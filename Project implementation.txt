@@ -8,7 +8,7 @@ colour blind mode? menu option to disable colours?
 
 Data which could be collected
 * How far the test player diverges from the path
- * Did they go towards other landmarks (some may look interesting and be disractions)
+ ~~* Did they go towards other landmarks (some may look interesting and be disractions)~~
 * How long the test player takes to reach the destination
 * How often the test player asks the game for more directions
 * The test players opinions - make these binary choice (Natural language or waypoint):

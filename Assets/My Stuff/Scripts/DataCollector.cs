@@ -8,21 +8,40 @@ using UnityEngine.Analytics;
 
 public class DataCollector : MonoBehaviour
 {
+    private List<Vector3> playerRoute;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Transform goal;
 
-	// Use this for initialization
-	void Start()
+    public bool recordMode;
+    private float timeTaken;
+    private int manualRecalcPathCount;
+
+    // Use this for initialization
+    void Start()
     {
         //Analytics.CustomEvent();
-
+        timeTaken = 0.0f;
         
 	}
 	
 	// Update is called once per frame
 	void Update()
     {
-		
+	    if(recordMode)
+        {
+            // Track the time taken
+            timeTaken += Time.deltaTime;
+        }
 	}
 
-   
+    void FixedUpdate()
+    {
+        if(recordMode)
+        {
+            // Log player location
+            playerRoute.Add(player.transform.position);
+        }
+    }
+
 
 }

@@ -7,8 +7,8 @@ public class Navigator : MonoBehaviour
 {
     // https://docs.unity3d.com/Manual/nav-CreateNavMeshAgent.html
 
-    public Transform goal;
-    public GuiController guiController;
+    [SerializeField] private Transform goal;
+    [SerializeField] private GuiController guiController;
     private NavMeshAgent agent;
 
     // Use this for initialization

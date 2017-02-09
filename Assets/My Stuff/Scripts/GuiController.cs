@@ -7,8 +7,7 @@ public class GuiController : MonoBehaviour
 {
     public List<string> directions;
 
-    [SerializeField]
-    private Rect directionsBox;
+    [SerializeField] private Rect directionsBox;
 
 	// Use this for initialization
 	void Start()
