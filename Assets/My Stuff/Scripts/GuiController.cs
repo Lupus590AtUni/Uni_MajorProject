@@ -31,7 +31,7 @@ public class GuiController : MonoBehaviour
 
         int yPos = 20;
 
-
+        //print("directions.Count: "+ directions.Count);
         for(int i = 0; i< directions.Count; i++)
         {
             GUI.Label(new Rect(5, yPos, directionsBox.size.x - 5, 1000), directions[i]);

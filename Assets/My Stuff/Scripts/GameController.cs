@@ -13,15 +13,17 @@ public class GameController : MonoBehaviour
 	
     void playerThinksTheyAreThere()
     {
-
+        //Collect Data
+        //Move Player
+        //Set New Destination
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetButton("Fire1"))
+		if(Input.GetButtonUp("Fire1"))
         {
-            //print("FIRE!");
+            playerThinksTheyAreThere();
         }
 	}
 }

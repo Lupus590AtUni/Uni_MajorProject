@@ -32,13 +32,13 @@ public class Navigator : MonoBehaviour
     {
 
         agent.destination = goal.position;
-        
-        int i = 0;
-        foreach(Vector3 node in agent.path.corners)
+
+        print("agent.path.corners.Length: " + agent.path.corners.Length);
+        /*for(int i = 0; i<agent.path.corners.Length; i++)
         {
             guiController.directions.Add(node.ToString());
             i++;
-        }
+        }*/
         
     }
 
