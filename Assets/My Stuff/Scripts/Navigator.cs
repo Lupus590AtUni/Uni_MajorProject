@@ -20,17 +20,17 @@ public class Navigator : MonoBehaviour
         //print("Navigator Script: started");
         agent = GetComponent<NavMeshAgent>();
 
-        //Invoke("recalcPath",2); //didn't work //2 second delay so everything has a chance to load before calculating the path //http://answers.unity3d.com/questions/799637/delay-the-start-function.html
+       
 
 
     }
 
-    void findLandmarks()
+    public void findLandmarks()
     {
 
     }
 
-    void recalcPath()
+    public void recalcPath()
     {
 
         agent.destination = gameController.goal.position;
