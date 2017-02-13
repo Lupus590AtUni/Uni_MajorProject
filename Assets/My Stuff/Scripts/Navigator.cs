@@ -50,6 +50,6 @@ public class Navigator : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        //recalcPath();
+        
 	}
 }

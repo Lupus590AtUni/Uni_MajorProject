@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     public Navigator navigator;
 
     private bool pauseState = false;
-    private bool worldReadyState = false;
 
     public bool isPaused()
     {
@@ -34,32 +33,29 @@ public class GameController : MonoBehaviour
         dataCollector = FindObjectOfType<DataCollector>();
         navigator = FindObjectOfType<Navigator>();
         //print("Game Script: started");
-        
+        //StartCoroutine("playerThinksTheyAreThere");
 
     }
 
-    void setupWorld()
+    IEnumerator playerThinksTheyAreThere()
     {
-        if(worldReadyState) return; //world is ready no need to set it up again
-        Invoke("navigator.recalcPath",2);  //2 second delay so everything has a chance to load before calculating the path //http://answers.unity3d.com/questions/799637/delay-the-start-function.html
-        worldReadyState = true;
-    }
-	
-    void playerThinksTheyAreThere()
-    {
-        //Collect Data
-        //Move Player
-        //Set New Destination
+        while(true)
+        {
+            if(Input.GetButtonUp("Fire1"))
+            {
+                //Collect Data
+                //Move Player
+                //Set New Destination
+                yield return new WaitForEndOfFrame();
+                navigator.recalcPath();
+            }
+        }
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-        if(!worldReadyState) setupWorld();
-		if(Input.GetButtonUp("Fire1"))
-        {
-            playerThinksTheyAreThere();
-        }
+		
         if(Input.GetButtonUp("Pause"))
         {
             if(isPaused())
