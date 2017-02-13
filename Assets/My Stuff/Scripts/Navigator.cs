@@ -20,8 +20,6 @@ public class Navigator : MonoBehaviour
         //print("Navigator Script: started");
         agent = GetComponent<NavMeshAgent>();
 
-       
-
 
     }
 
@@ -30,10 +28,11 @@ public class Navigator : MonoBehaviour
 
     }
 
-    public void recalcPath()
+    public void recalcPath() //recalculate the path and send to gui controller
     {
 
         agent.destination = gameController.goal.position;
+
 
         print("agent.path.status: " + agent.path.status);
         print("agent.isPathStale: " + agent.isPathStale);
@@ -51,5 +50,19 @@ public class Navigator : MonoBehaviour
 	void Update()
     {
         
-	}
+    }
+
+
+    
+    private bool gotFirstPath = false;
+
+    void LateUpdate()
+    {
+        if(!gotFirstPath)
+        {
+            recalcPath();
+            gotFirstPath = true;
+        }
+    }
+    
 }
