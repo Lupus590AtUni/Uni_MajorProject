@@ -20,7 +20,7 @@ public class Navigator : MonoBehaviour
         //print("Navigator Script: started");
         agent = GetComponent<NavMeshAgent>();
 
-        recalcPath();
+        //Invoke("recalcPath",2); //didn't work //2 second delay so everything has a chance to load before calculating the path //http://answers.unity3d.com/questions/799637/delay-the-start-function.html
 
 
     }
@@ -50,6 +50,6 @@ public class Navigator : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        
+        //recalcPath();
 	}
 }
