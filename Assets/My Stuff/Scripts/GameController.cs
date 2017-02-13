@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public Transform goal;
-    private DataCollector dataCollector;
+    public DataCollector dataCollector;
 
     private bool pauseState = false;
 

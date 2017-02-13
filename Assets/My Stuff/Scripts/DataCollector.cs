@@ -9,6 +9,7 @@ using UnityEngine.Analytics;
 public class DataCollector : MonoBehaviour
 {
     private List<Vector3> playerRoute;
+    private List<Vector3> playerLook;
     private GameObject player;
     private GameController gameController;
 
@@ -42,6 +43,9 @@ public class DataCollector : MonoBehaviour
         {
             // Log player location
             playerRoute.Add(player.transform.position);
+
+            // Log player look vector
+            playerLook.Add(player.transform.forward); //http://answers.unity3d.com/questions/425734/which-direction-is-character-is-facing.html
         }
     }
 
