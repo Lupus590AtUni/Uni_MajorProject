@@ -38,7 +38,7 @@ public class PathDescriber : MonoBehaviour
 
     private Vector3 findCornerHeading(Vector3 current, Vector3 next)
     {
-        return null;
+        return new Vector3();
     }
 
     private customPath[] convertPathToCustom(NavMeshPath oldPath)
