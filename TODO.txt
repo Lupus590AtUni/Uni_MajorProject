@@ -10,8 +10,8 @@ preamble - do by 8th
   data collection
   
   
-  Main Menu
-  
+  Main Menu - partly framed
+  survey - partly framed
   
   
 identify corners/junctions - do by 15th
