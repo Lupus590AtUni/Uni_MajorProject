@@ -24,7 +24,7 @@ public class PathDescriber : MonoBehaviour
         landmarks = FindObjectsOfType<Landmark>();
     }
 
-    private string[] convertCornersToTurns(Vector3[] corners)
+    private string convertCornerToTurn(Vector3 cornerPos, Vector3 cornerHeading)
     {
         //TODO: dot product stuff on vectors to identify left and right turns
 
@@ -36,12 +36,19 @@ public class PathDescriber : MonoBehaviour
         return null;
     }
 
-    private customPath linkTurnToLandmarks(Vector3 corner)
+    private Vector3 findCornerHeading(Vector3 current, Vector3 next)
     {
         return null;
     }
 
-    public customPath[] convertPath(NavMeshPath oldPath)
+    private customPath[] convertPathToCustom(NavMeshPath oldPath)
+    {
+        return null;
+    }
+
+    //TODO: fancier natural language generation
+
+    public string[] convertPath(NavMeshPath oldPath)
     {
         return null;
     }
