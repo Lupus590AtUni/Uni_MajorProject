@@ -67,7 +67,7 @@ public class GuiController : MonoBehaviour
                 }
             default:
                 {
-                    print("GuiController.OnGui - unhandled case");
+                    print("GuiController.OnGui - unhandled GameController.Mode");
                     break;
                 }
         }

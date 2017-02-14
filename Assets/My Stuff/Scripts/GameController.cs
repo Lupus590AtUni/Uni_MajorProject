@@ -40,35 +40,64 @@ public class GameController : MonoBehaviour
 
     }
 
-    IEnumerator playerThinksTheyAreThere() //TODO: Call this
+    void playerThinksTheyAreThere()
     {
-        while(true)
-        {
-            if(mode == Mode.game && Input.GetButtonUp("Fire1"))
-            {
-                //Collect Data
-                //Move Player
-                //Set New Destination
-                yield return new WaitForEndOfFrame();
-                navigator.recalcPath();
-            }
-        }
+        //TODO: implement and test
+        //Collect Data
+        //Move Player
+        //Set New Destination
+        navigator.recalcPath(); //TODO: check for issues here
+            
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-		
-        if(mode == Mode.game && Input.GetButtonUp("Pause"))
+        switch(mode)
         {
-            if(isPaused())
-            {
-                resume();
-            }
-            else
-            {
-                pause();
-            }
+            case GameController.Mode.game:
+                {
+                    if(isPaused())
+                    {
+                        // Paused
+                        if(Input.GetButtonUp("Pause"))
+                        {
+
+                            resume();
+
+                        }
+                    }
+                    else
+                    {
+                        // Play
+                        if(Input.GetButtonUp("Fire1"))
+                        {
+                            playerThinksTheyAreThere();
+                        }
+                        if(Input.GetButtonUp("Pause"))
+                        {
+                            
+                            pause();
+                            
+                        }
+                    }
+                    break;
+                }
+            case GameController.Mode.menu:
+                {
+                    // Main menu
+                    break;
+                }
+            case GameController.Mode.survey:
+                {
+                    // Survey
+                    break;
+                }
+            default:
+                {
+                    print("GameController.Update - unhandled GameController.Mode");
+                    break;
+                }
         }
 	}
 }
