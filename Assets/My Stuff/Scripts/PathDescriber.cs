@@ -46,7 +46,11 @@ public class PathDescriber : MonoBehaviour
         return null;
     }
 
-    //TODO: fancier natural language generation
+    private string[] naturalLanguageConverter(customPath[] path)
+    {
+        //TODO: fancier natural language generation
+        return null;
+    }
 
     public string[] convertPath(NavMeshPath oldPath)
     {
