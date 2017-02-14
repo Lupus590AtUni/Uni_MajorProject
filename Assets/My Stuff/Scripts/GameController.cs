@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    IEnumerator playerThinksTheyAreThere()
+    IEnumerator playerThinksTheyAreThere() //TODO: Call this
     {
         while(true)
         {
