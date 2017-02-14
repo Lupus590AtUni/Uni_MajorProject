@@ -10,12 +10,14 @@ public class Navigator : MonoBehaviour
     private GameController gameController;
     private GuiController guiController;
     private NavMeshAgent agent;
+    private PathDescriber pathDescriber;
 
     // Use this for initialization
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
         guiController = FindObjectOfType<GuiController>();
+        pathDescriber = FindObjectOfType<PathDescriber>();
 
         //print("Navigator Script: started");
         agent = GetComponent<NavMeshAgent>();
