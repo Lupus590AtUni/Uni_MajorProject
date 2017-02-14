@@ -24,19 +24,24 @@ public class PathDescriber : MonoBehaviour
         landmarks = FindObjectsOfType<Landmark>();
     }
 
-    public string[] convertCornersToTurns(Vector3[] corners)
+    private string[] convertCornersToTurns(Vector3[] corners)
     {
         //TODO: dot product stuff on vectors to identify left and right turns
 
         return null;
     }
 
-    public Landmark findNearestLandmark(Vector3 position)
+    private Landmark findNearestLandmark(Vector3 position)
     {
         return null;
     }
 
-    public customPath linkTurnToLandmarks(Vector3 corner)
+    private customPath linkTurnToLandmarks(Vector3 corner)
+    {
+        return null;
+    }
+
+    public customPath[] convertPath(NavMeshPath oldPath)
     {
         return null;
     }
