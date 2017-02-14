@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     public DataCollector dataCollector;
     public Navigator navigator;
 
+    public enum Mode {menu, game, survey };
+    public Mode mode = Mode.menu;
+
     private bool pauseState = false;
 
     public bool isPaused()
@@ -41,7 +44,7 @@ public class GameController : MonoBehaviour
     {
         while(true)
         {
-            if(Input.GetButtonUp("Fire1"))
+            if(mode == Mode.game && Input.GetButtonUp("Fire1"))
             {
                 //Collect Data
                 //Move Player
@@ -56,7 +59,7 @@ public class GameController : MonoBehaviour
 	void Update ()
     {
 		
-        if(Input.GetButtonUp("Pause"))
+        if(mode == Mode.game && Input.GetButtonUp("Pause"))
         {
             if(isPaused())
             {
