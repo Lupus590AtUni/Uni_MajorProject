@@ -25,16 +25,12 @@ public class Navigator : MonoBehaviour
 
     }
 
-    public void findLandmarks()
-    {
-
-    }
-
     public void recalcPath() //recalculate the path and send to gui controller
     {
 
         agent.destination = gameController.goal.position;
 
+        
 
         print("agent.path.status: " + agent.path.status);
         print("agent.isPathStale: " + agent.isPathStale);
