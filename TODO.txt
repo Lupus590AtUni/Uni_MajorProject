@@ -23,6 +23,11 @@ place landmarks
   list on hud
   update data collection to include landmarks
   
+  circle landmark finding with quandrents
+    turn right before landmark
+    turn right after landmark
+    turn right heading towards landmark
+    turn right headding away from landmark
   
 merge lists
   pair turns with landmarks

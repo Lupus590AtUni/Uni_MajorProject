@@ -3,3 +3,5 @@ script with variables
   size?
   colour
   shape
+  
+single string?

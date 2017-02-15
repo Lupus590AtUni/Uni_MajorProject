@@ -70,7 +70,7 @@ public class GameController : MonoBehaviour
                     else
                     {
                         // Play
-                        if(Input.GetButtonUp("Fire1"))
+                        if(Input.GetButtonUp("Arrival"))
                         {
                             playerThinksTheyAreThere();
                         }

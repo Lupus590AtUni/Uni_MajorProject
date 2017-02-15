@@ -14,7 +14,7 @@ public class GuiController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //print("GUI Script: started");
+        print("GUI Script: started");
         gameController = FindObjectOfType<GameController>();
     }
 	
@@ -33,7 +33,7 @@ public class GuiController : MonoBehaviour
                     if(gameController.isPaused())
                     {
                         //TODO: Pause Menu
-
+                        GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Paused");
                     }
                     else
                     {
