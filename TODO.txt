@@ -28,6 +28,9 @@ place landmarks
     turn right after landmark
     turn right heading towards landmark
     turn right headding away from landmark
+    
+  ranges?
+    give player range finder?
   
 merge lists
   pair turns with landmarks
