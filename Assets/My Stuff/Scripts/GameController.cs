@@ -54,8 +54,9 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //print("GameController.mode: " + mode.ToString()); //NOTE: printout current game mode
-        
+        //NOTE: printout current game mode
+        //print("GameController.mode: " + mode.ToString()); 
+
         switch(mode)
         {
             case Mode.game:

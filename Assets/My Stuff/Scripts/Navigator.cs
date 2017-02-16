@@ -61,7 +61,7 @@ public class Navigator : MonoBehaviour
 
     void LateUpdate()
     {
-        //HACK
+        //HACK: first path generation - also this seems to be broken
         if(hadfirstUpdate && !gotFirstPath)
         {
             recalcPath();
