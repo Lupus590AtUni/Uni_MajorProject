@@ -20,7 +20,7 @@ identify corners/junctions - do by 15th
   
 place landmarks
   See landmark plan
-  list on hud
+  list on hud - try to do by 22nd
   update data collection to include landmarks
   
   circle landmark finding with quandrents
