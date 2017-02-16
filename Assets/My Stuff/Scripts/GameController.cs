@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public Navigator navigator;
 
     public enum Mode {menu, game, survey };
-    public Mode mode = Mode.menu;
+    public Mode mode;
 
     private bool pauseState = false;
 
@@ -53,6 +53,8 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        print("GameController.mode: " + mode.ToString());
+        
         switch(mode)
         {
             case GameController.Mode.game:
