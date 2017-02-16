@@ -30,7 +30,10 @@ public class Navigator : MonoBehaviour
 
         agent.destination = gameController.currentGoal.position;
 
-        
+
+        //TODO: fix as this causes error messages
+        //guiController.directions = pathDescriber.convertPathToString(agent.path);
+
 
         print("agent.path.status: " + agent.path.status);
         print("agent.isPathStale: " + agent.isPathStale);
@@ -53,15 +56,17 @@ public class Navigator : MonoBehaviour
 
     
     private bool gotFirstPath = false;
+    private bool hadfirstUpdate = false;
 
     void LateUpdate()
     {
-        //HACK
-        if(!gotFirstPath)
+        //HACK: first path generation - also this seems to be broken
+        if(hadfirstUpdate && !gotFirstPath)
         {
             recalcPath();
             gotFirstPath = true;
         }
+
+        hadfirstUpdate = true;
     }
-    
 }

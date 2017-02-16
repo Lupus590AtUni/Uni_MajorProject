@@ -45,8 +45,9 @@ public class GameController : MonoBehaviour
 
     public void initGame(int routeNumber)
     {
-        player.transform.position = routes[routeNumber].startPos.position;
-        currentGoal.position = routes[routeNumber].goalPos.position;
+        //player.transform.position = routes[routeNumber].startPos.position;
+        //currentGoal.position = routes[routeNumber].goalPos.position;
+        navigator.recalcPath();
     }
 
     public void enterGame()
@@ -93,8 +94,9 @@ public class GameController : MonoBehaviour
         //LOW: implement and test
         //Collect Data
 
-        currentRouteNumber++;
+        //currentRouteNumber++;
         initGame(currentRouteNumber);
+        
             
     }
 

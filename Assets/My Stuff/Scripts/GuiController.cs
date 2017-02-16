@@ -8,6 +8,9 @@ public class GuiController : MonoBehaviour
     [HideInInspector]
     public List<string> directions;
 
+    private float buttonHeight = 20;
+    private float buttonSpacing = 5;
+
     [SerializeField]
     private Rect directionsBox;
     [SerializeField]
@@ -39,17 +42,18 @@ public class GuiController : MonoBehaviour
 
                     if(gameController.isPaused())
                     {
-                        //LOW: Pause Menu temp code in place - doens't work
+                        
                         PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
                         GUI.BeginGroup(PauseBox);
                         GUI.Box(new Rect(0,0,pauseBoxSize.x, pauseBoxSize.y), "Paused");
-                        if(GUI.Button(new Rect(5, 25, pauseBoxSize.x - 5, 15), "Resume"))
+                        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing , pauseBoxSize.x - 10, buttonHeight), "Resume"))
                             gameController.resume();
-                        if(GUI.Button(new Rect(5, 20 * 2, pauseBoxSize.x - 5, 15), "Main Menu"))
+
+                        if(GUI.Button(new Rect(5, buttonHeight * 2 + buttonSpacing * 2, pauseBoxSize.x - 10, buttonHeight), "Main Menu"))
                             gameController.enterMenu();
 
 
-                            GUI.EndGroup();
+                        GUI.EndGroup();
                     }
                     else
                     {
@@ -76,13 +80,23 @@ public class GuiController : MonoBehaviour
             case GameController.Mode.menu:
                 {
                     //LOW: Main menu
+                    PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
+                    GUI.BeginGroup(PauseBox);
+                    GUI.Box(new Rect(0, 0, pauseBoxSize.x, pauseBoxSize.y), "Paused");
+                    if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing, pauseBoxSize.x - 10, buttonHeight), "Resume"))
+                        gameController.resume();
 
+                    if(GUI.Button(new Rect(5, buttonHeight * 2 + buttonSpacing * 2, pauseBoxSize.x - 10, buttonHeight), "Main Menu"))
+                        gameController.enterMenu();
+
+
+                    GUI.EndGroup();
                     break;
                 }
             case GameController.Mode.survey:
                 {
-                    //LOW: Survey
-
+                    
+                    controlSurvey();
                     break;
                 }
             default:
@@ -93,4 +107,12 @@ public class GuiController : MonoBehaviour
         }
 
     }
+
+
+
+    void controlSurvey()
+    {
+        //LOW: Survey
+    }
+
 }
