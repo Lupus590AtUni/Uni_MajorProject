@@ -71,7 +71,7 @@ public class PathDescriber : MonoBehaviour
         for(int i = 0; i < oldPath.corners.Length; i++)
         {
             print(oldPath.corners[i].ToString());
-            newPath[i].position = oldPath.corners[i];
+            newPath[i].position = oldPath.corners[i]; //TODO: Problem is blamed here by unity editor
 
             if(i + 1 < oldPath.corners.Length)
                 newPath[i].heading = findCornerHeading(oldPath.corners[i], oldPath.corners[i + 1]);

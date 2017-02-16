@@ -31,7 +31,7 @@ public class Navigator : MonoBehaviour
         agent.destination = gameController.currentGoal.position;
 
 
-        //TODO: fix as this causes error messages adn dosn't give directions
+        //HACK: or not I guess as this is the problem code
         string[] str = pathDescriber.convertPathToString(agent.path);
 
 
@@ -42,7 +42,9 @@ public class Navigator : MonoBehaviour
         guiController.directions.Clear();
         for(int i = 0; i<agent.path.corners.Length; i++)
         {
-            guiController.directions.Add(str[i]);
+            guiController.directions.Add(str[i]); //goes with problem code
+
+            //HACK this is the actual 'hack'
             //guiController.directions.Add(agent.path.corners[i].ToString());
         }
         
