@@ -30,22 +30,17 @@ public class Navigator : MonoBehaviour
 
         agent.destination = gameController.goal.position;
 
-        guiController.directions = new string[agent.path.corners.Length];
+        
 
-        //TODO: fix as this causes error messages
-        //guiController.directions = pathDescriber.convertPathToString(agent.path); 
+        print("agent.path.status: " + agent.path.status);
+        print("agent.isPathStale: " + agent.isPathStale);
 
-        //print("agent.path.status: " + agent.path.status);
-        //print("agent.isPathStale: " + agent.isPathStale);
-
-        //print("agent.path.corners.Length: " + agent.path.corners.Length);
-
-
+        print("agent.path.corners.Length: " + agent.path.corners.Length);
+        guiController.directions.Clear();
         for(int i = 0; i<agent.path.corners.Length; i++)
         {
-            guiController.directions[i] = agent.path.corners[i].ToString();
+            guiController.directions.Add(agent.path.corners[i].ToString());
         }
-        
         
     }
 
@@ -58,18 +53,15 @@ public class Navigator : MonoBehaviour
 
     
     private bool gotFirstPath = false;
-    private bool hadfirstUpdate = false;
 
     void LateUpdate()
     {
-        //HACK: first path generation - also this seems to be broken
-        if(hadfirstUpdate && !gotFirstPath)
+        //HACK
+        if(!gotFirstPath)
         {
             recalcPath();
             gotFirstPath = true;
         }
-
-        hadfirstUpdate = true;
     }
     
 }
