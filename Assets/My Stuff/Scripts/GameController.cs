@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public Navigator navigator;
 
     public enum Mode {menu, game, survey };
-    [HideInInspector] public Mode mode = Mode.game;
+    [HideInInspector] public Mode mode; //set in start
 
     private bool pauseState = false;
 
@@ -36,8 +36,9 @@ public class GameController : MonoBehaviour
         dataCollector = FindObjectOfType<DataCollector>();
         navigator = FindObjectOfType<Navigator>();
 
+        mode = Mode.game; //TODO: change to menu once menu is made
+
         //print("Game Script: started");
-        //StartCoroutine("playerThinksTheyAreThere");
     }
 
     void playerThinksTheyAreThere()

@@ -28,10 +28,12 @@ public class GuiController : MonoBehaviour
 
     void OnGUI()
     {
+        print("OnGUI called");
         switch(gameController.mode)
         {
             case GameController.Mode.game:
                 {
+                    print("currently in game mode");
                     if(gameController.isPaused())
                     {
                         //LOW: Pause Menu temp code in place
@@ -43,6 +45,7 @@ public class GuiController : MonoBehaviour
                     }
                     else
                     {
+                        print("Currently playing");
                         // Normal Hud
                         //LOW: improve
                         GUI.BeginGroup(directionsBox);
@@ -65,12 +68,13 @@ public class GuiController : MonoBehaviour
             case GameController.Mode.menu:
                 {
                     //LOW: Main menu
-                   
+                    print("currently in menu mode");
                     break;
                 }
             case GameController.Mode.survey:
                 {
                     //LOW: Survey
+                    print("currently in survey mode");
                     break;
                 }
             default:
