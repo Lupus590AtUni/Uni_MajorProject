@@ -33,8 +33,8 @@ place landmarks
     give player range finder?
   
 merge lists
-  pair turns with landmarks
-  remove redundent turns
+  pair turns with landmarks - I think is done, can't test due to bug in other stuff
+  remove redundent turns - there will never be any due to the way that unity pathfinding works
   
   
 improve with natual language generation
