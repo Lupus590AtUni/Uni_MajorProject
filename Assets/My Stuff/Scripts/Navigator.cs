@@ -56,6 +56,7 @@ public class Navigator : MonoBehaviour
 
     void LateUpdate()
     {
+        //HACK
         if(!gotFirstPath)
         {
             recalcPath();

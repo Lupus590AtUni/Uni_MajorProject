@@ -43,11 +43,11 @@ public class GameController : MonoBehaviour
 
     void playerThinksTheyAreThere()
     {
-        //TODO: implement and test
+        //LOW: implement and test
         //Collect Data
         //Move Player
         //Set New Destination
-        navigator.recalcPath(); //TODO: check for issues here
+        navigator.recalcPath(); //LOW: check for issues here
             
     }
 

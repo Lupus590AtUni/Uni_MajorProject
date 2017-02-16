@@ -32,7 +32,7 @@ public class GuiController : MonoBehaviour
                 {
                     if(gameController.isPaused())
                     {
-                        //TODO: Pause Menu
+                        //LOW: Pause Menu
                         GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Paused");
                     }
                     else
@@ -57,12 +57,12 @@ public class GuiController : MonoBehaviour
                 }
             case GameController.Mode.menu:
                 {
-                    //TODO: Main menu
+                    //LOW: Main menu
                     break;
                 }
             case GameController.Mode.survey:
                 {
-                    //TODO: Survey
+                    //LOW: Survey
                     break;
                 }
             default:
