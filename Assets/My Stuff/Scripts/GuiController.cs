@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GuiController : MonoBehaviour
 {
-    public List<string> directions;
+    public string[] directions;
 
     [SerializeField] private Rect directionsBox;
 
@@ -45,7 +45,7 @@ public class GuiController : MonoBehaviour
                         int yPos = 20;
 
                         //print("directions.Count: "+ directions.Count);
-                        for(int i = 0; i < directions.Count; i++)
+                        for(int i = 0; i < directions.Length; i++)
                         {
                             GUI.Label(new Rect(5, yPos, directionsBox.size.x - 5, 1000), directions[i]);
                             yPos += 15;

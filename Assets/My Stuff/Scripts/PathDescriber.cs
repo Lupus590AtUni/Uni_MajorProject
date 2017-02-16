@@ -8,7 +8,7 @@ public class customPath
     public Vector3 position;
     public Vector3 heading; // points towards next position 
     public Landmark landmark;
-    public string turnWord; //TODO: how best to do this
+    public string turnWord;
 }
 
 public class PathDescriber : MonoBehaviour
@@ -26,8 +26,17 @@ public class PathDescriber : MonoBehaviour
 
     private string convertCornerToTurn(Vector3 cornerPos, Vector3 cornerHeading)
     {
-        //TODO: dot product stuff on vectors to identify left and right turns
+        if(cornerHeading == Vector3.zero)
+            return "arrived";
 
+        Vector3 normal = Vector3.Cross(cornerPos, Vector3.up);
+
+        float dot = Vector3.Dot(normal, cornerHeading);
+
+        if(dot > 0)
+            return "right";
+        else
+            return "left";
 
         return null;
     }
@@ -55,12 +64,25 @@ public class PathDescriber : MonoBehaviour
         return heading;
     }
 
-    private customPath[] convertPathToCustom(NavMeshPath oldPath)
+    public customPath[] convertPathToCustom(NavMeshPath oldPath)
     {
-        //TODO: Actually put stuff here
-        // call the above stuff in the correct order with 'glue code'
+        customPath[] newPath = new customPath[oldPath.corners.Length];
 
-        return null;
+        for(int i = 0; i < oldPath.corners.Length; i++)
+        {
+            newPath[i].position = oldPath.corners[i];
+
+            if(i + 1 < oldPath.corners.Length)
+                newPath[i].heading = findCornerHeading(oldPath.corners[i], oldPath.corners[i + 1]);
+            else
+                newPath[i].heading = Vector3.zero;
+
+            newPath[i].landmark = findLandmark(newPath[i].position);
+
+            newPath[i].turnWord = convertCornerToTurn(newPath[i].position, newPath[i].heading);
+        }
+
+        return newPath;
     }
 
     private string[] naturalLanguageConverter(customPath[] path)
@@ -70,9 +92,20 @@ public class PathDescriber : MonoBehaviour
         return null;
     }
 
-    public string[] convertPath(NavMeshPath oldPath)
+    public string[] convertPathToString(customPath[] path)
     {
-        //TODO: Actually put stuff here
+        string[] str = new string[path.Length];
+
+        for(int i = 0; i < path.Length; i++)
+        {
+            str[i] = "turn " + path[i].turnWord + " at the " + path[i].landmark.description;
+        }
+
         return null;
+    }
+
+    public string[] convertPathToString(NavMeshPath path)
+    {
+        return convertPathToString(convertPathToCustom(path));
     }
 }
