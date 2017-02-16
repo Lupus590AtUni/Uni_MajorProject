@@ -31,8 +31,8 @@ public class Navigator : MonoBehaviour
         agent.destination = gameController.currentGoal.position;
 
 
-        //TODO: fix as this causes error messages
-        //guiController.directions = pathDescriber.convertPathToString(agent.path);
+        //TODO: fix as this causes error messages adn dosn't give directions
+        string[] str = pathDescriber.convertPathToString(agent.path);
 
 
         print("agent.path.status: " + agent.path.status);
@@ -42,7 +42,8 @@ public class Navigator : MonoBehaviour
         guiController.directions.Clear();
         for(int i = 0; i<agent.path.corners.Length; i++)
         {
-            guiController.directions.Add(agent.path.corners[i].ToString());
+            guiController.directions.Add(str[i]);
+            //guiController.directions.Add(agent.path.corners[i].ToString());
         }
         
     }
