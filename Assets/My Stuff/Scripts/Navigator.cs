@@ -32,14 +32,15 @@ public class Navigator : MonoBehaviour
 
         guiController.directions = new string[agent.path.corners.Length];
 
-        //guiController.directions = pathDescriber.convertPathToString(agent.path); //TODO: fix as this causes error messages
+        //TODO: fix as this causes error messages
+        //guiController.directions = pathDescriber.convertPathToString(agent.path); 
 
         //print("agent.path.status: " + agent.path.status);
         //print("agent.isPathStale: " + agent.isPathStale);
 
         //print("agent.path.corners.Length: " + agent.path.corners.Length);
 
-        
+
         for(int i = 0; i<agent.path.corners.Length; i++)
         {
             guiController.directions[i] = agent.path.corners[i].ToString();
