@@ -36,7 +36,7 @@ public class GuiController : MonoBehaviour
                     
                     if(gameController.isPaused())
                     {
-                        //LOW: Pause Menu temp code in place
+                        //LOW: Pause Menu temp code in place - doens't work
                         PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
                         GUI.BeginGroup(PauseBox);
                         GUI.Box(PauseBox, "Paused");
