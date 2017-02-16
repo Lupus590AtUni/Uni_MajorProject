@@ -6,7 +6,7 @@ preamble - do by 8th
   
   
   destination switching, start location resetting - do by 15th
-    I think I got there button
+    I think I got there button - making progress
   data collection
   
   
@@ -14,13 +14,13 @@ preamble - do by 8th
   survey - partly framed
   
   
-identify corners/junctions - do by 15th
+identify corners/junctions - I think is done, can't test due to bug in other stuff  - do by 15th
   list on hud
   
   
 place landmarks
   See landmark plan
-  list on hud - try to do by 22nd
+  list on hud - I think is done, can't test due to bug in other stuff - try to do by 22nd
   update data collection to include landmarks
   
   circle landmark finding with quandrents

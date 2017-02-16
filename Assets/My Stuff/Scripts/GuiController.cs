@@ -59,7 +59,6 @@ public class GuiController : MonoBehaviour
                     {
 
                         // Normal Hud
-                        //LOW: improve
                         GUI.BeginGroup(directionsBox);
                         // Make a background box
                         GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Directions");
@@ -79,18 +78,7 @@ public class GuiController : MonoBehaviour
                 }
             case GameController.Mode.menu:
                 {
-                    //LOW: Main menu
-                    PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
-                    GUI.BeginGroup(PauseBox);
-                    GUI.Box(new Rect(0, 0, pauseBoxSize.x, pauseBoxSize.y), "Paused");
-                    if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing, pauseBoxSize.x - 10, buttonHeight), "Resume"))
-                        gameController.resume();
-
-                    if(GUI.Button(new Rect(5, buttonHeight * 2 + buttonSpacing * 2, pauseBoxSize.x - 10, buttonHeight), "Main Menu"))
-                        gameController.enterMenu();
-
-
-                    GUI.EndGroup();
+                    controlMenu();
                     break;
                 }
             case GameController.Mode.survey:
@@ -108,7 +96,21 @@ public class GuiController : MonoBehaviour
 
     }
 
+    void controlMenu()
+    {
+        //LOW: Main menu
+        PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
+        GUI.BeginGroup(PauseBox);
+        GUI.Box(new Rect(0, 0, pauseBoxSize.x, pauseBoxSize.y), "Paused");
+        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing, pauseBoxSize.x - 10, buttonHeight), "Resume"))
+            gameController.resume();
 
+        if(GUI.Button(new Rect(5, buttonHeight * 2 + buttonSpacing * 2, pauseBoxSize.x - 10, buttonHeight), "Main Menu"))
+            gameController.enterMenu();
+
+
+        GUI.EndGroup();
+    }
 
     void controlSurvey()
     {
