@@ -28,31 +28,45 @@ public class PathDescriber : MonoBehaviour
     {
         //TODO: dot product stuff on vectors to identify left and right turns
 
+
         return null;
     }
 
-    private Landmark findNearestLandmark(Vector3 position)
+    private Landmark findLandmark(Vector3 position) //find the nearest landmark
     {
-        //TODO: Actually put stuff here
-        return null;
+
+        Landmark nearest = landmarks[0];
+        foreach( Landmark current in landmarks)
+        {
+            //LOW: add better criteria
+            if(Vector3.Distance(nearest.transform.position, position) > Vector3.Distance(current.transform.position, position))
+            {
+                nearest = current;
+            }
+        }
+
+        return nearest;
     }
 
     private Vector3 findCornerHeading(Vector3 current, Vector3 next)
     {
-        //TODO: Actually put stuff here
-        return new Vector3();
+        Vector3 heading = next - current; //hopefully this is pointing the right way
+            
+        return heading;
     }
 
     private customPath[] convertPathToCustom(NavMeshPath oldPath)
     {
         //TODO: Actually put stuff here
+        // call the above stuff in the correct order with 'glue code'
+
         return null;
     }
 
     private string[] naturalLanguageConverter(customPath[] path)
     {
-        //TODO: Actually put stuff here
-        //TODO: fancier natural language generation
+        //LOW: Actually put stuff here
+        //LOW: fancier natural language generation
         return null;
     }
 
