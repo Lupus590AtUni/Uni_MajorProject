@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
         
         switch(mode)
         {
-            case GameController.Mode.game:
+            case Mode.game:
                 {
                     if(isPaused())
                     {
@@ -85,12 +85,12 @@ public class GameController : MonoBehaviour
                     }
                     break;
                 }
-            case GameController.Mode.menu:
+            case Mode.menu:
                 {
                     // Main menu
                     break;
                 }
-            case GameController.Mode.survey:
+            case Mode.survey:
                 {
                     // Survey
                     break;

@@ -32,7 +32,7 @@ public class Navigator : MonoBehaviour
 
         guiController.directions = new string[agent.path.corners.Length];
 
-        //guiController.directions = pathDescriber.convertPathToString(agent.path);
+        //guiController.directions = pathDescriber.convertPathToString(agent.path); //TODO: fix as this causes error messages
 
         //print("agent.path.status: " + agent.path.status);
         //print("agent.isPathStale: " + agent.isPathStale);
