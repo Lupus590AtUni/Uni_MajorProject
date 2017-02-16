@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     private bool pauseState = false;
 
 
-    [SerializeField]
+    
     private List<Route> routes;
     private int currentRouteNumber;
 

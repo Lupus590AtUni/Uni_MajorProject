@@ -46,7 +46,7 @@ public class GuiController : MonoBehaviour
                         if(GUI.Button(new Rect(5, 25, pauseBoxSize.x - 5, 15), "Resume"))
                             gameController.resume();
                         if(GUI.Button(new Rect(5, 20 * 2, pauseBoxSize.x - 5, 15), "Main Menu"))
-                            gameController.enterMenu()
+                            gameController.enterMenu();
 
 
                             GUI.EndGroup();

@@ -28,7 +28,7 @@ public class Navigator : MonoBehaviour
     public void recalcPath() //recalculate the path and send to gui controller
     {
 
-        agent.destination = gameController.goal.position;
+        agent.destination = gameController.currentGoal.position;
 
         
 
