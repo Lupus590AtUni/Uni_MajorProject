@@ -2,16 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Route
+{
+    public Transform startPos;
+    public Transform goalPos;
+
+}
+
 public class GameController : MonoBehaviour
 {
-    public Transform goal;
+    public Transform currentGoal;
     [HideInInspector] public DataCollector dataCollector;
     [HideInInspector] public Navigator navigator;
+    [HideInInspector] public GameObject player;
 
     public enum Mode {menu, game, survey };
     [HideInInspector] public Mode mode; //set in start
 
     private bool pauseState = false;
+
+
+    [SerializeField]
+    private List<Route> routes;
+    private int currentRouteNumber;
 
     public bool isPaused()
     {
@@ -30,13 +43,47 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void initGame(int routeNumber)
+    {
+        player.transform.position = routes[routeNumber].startPos.position;
+        currentGoal.position = routes[routeNumber].goalPos.position;
+    }
+
+    public void enterGame()
+    {
+        mode = Mode.game;
+        resume();
+
+        currentRouteNumber = 0;
+        initGame(currentRouteNumber);
+        
+
+    }
+
+    public void enterSurvey()
+    {
+        mode = Mode.survey;
+        
+        
+    }
+
+    public void enterMenu()
+    {
+        mode = Mode.menu;
+        
+        
+
+
+    }
+
     // Use this for initialization
     void Start ()
     {
         dataCollector = FindObjectOfType<DataCollector>();
         navigator = FindObjectOfType<Navigator>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
-        mode = Mode.game; //TODO: change to menu once menu is made
+        enterGame();
 
         //print("Game Script: started");
     }
@@ -45,9 +92,9 @@ public class GameController : MonoBehaviour
     {
         //LOW: implement and test
         //Collect Data
-        //Move Player
-        //Set New Destination
-        navigator.recalcPath(); //LOW: check for issues here
+
+        currentRouteNumber++;
+        initGame(currentRouteNumber);
             
     }
 

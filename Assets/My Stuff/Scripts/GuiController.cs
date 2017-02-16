@@ -43,8 +43,13 @@ public class GuiController : MonoBehaviour
                         PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
                         GUI.BeginGroup(PauseBox);
                         GUI.Box(new Rect(0,0,pauseBoxSize.x, pauseBoxSize.y), "Paused");
+                        if(GUI.Button(new Rect(5, 25, pauseBoxSize.x - 5, 15), "Resume"))
+                            gameController.resume();
+                        if(GUI.Button(new Rect(5, 20 * 2, pauseBoxSize.x - 5, 15), "Main Menu"))
+                            gameController.enterMenu()
 
-                        GUI.EndGroup();
+
+                            GUI.EndGroup();
                     }
                     else
                     {
