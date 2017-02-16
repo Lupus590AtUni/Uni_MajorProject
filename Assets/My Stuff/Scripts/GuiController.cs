@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class GuiController : MonoBehaviour
 {
-    public string[] directions;
+    [HideInInspector] public string[] directions;
 
     [SerializeField] private Rect directionsBox;
+    [SerializeField] private Vector2 pauseBoxSize;
+    private Rect PauseBox;
 
     private GameController gameController;
 
     // Use this for initialization
     void Start()
     {
-        print("GUI Script: started");
+        //print("GUI Script: started");
         gameController = FindObjectOfType<GameController>();
     }
 	
@@ -32,15 +34,20 @@ public class GuiController : MonoBehaviour
                 {
                     if(gameController.isPaused())
                     {
-                        //LOW: Pause Menu
-                        GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Paused");
+                        //LOW: Pause Menu temp code in place
+                        PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
+                        GUI.BeginGroup(PauseBox);
+                        GUI.Box(PauseBox, "Paused");
+
+                        GUI.EndGroup();
                     }
                     else
                     {
                         // Normal Hud
+                        //LOW: improve
                         GUI.BeginGroup(directionsBox);
                         // Make a background box
-                        GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Directions");
+                        GUI.Box(directionsBox, "Directions");
 
                         int yPos = 20;
 
@@ -58,6 +65,7 @@ public class GuiController : MonoBehaviour
             case GameController.Mode.menu:
                 {
                     //LOW: Main menu
+                   
                     break;
                 }
             case GameController.Mode.survey:

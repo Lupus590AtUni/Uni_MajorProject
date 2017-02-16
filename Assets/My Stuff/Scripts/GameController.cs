@@ -5,12 +5,11 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public Transform goal;
-    public DataCollector dataCollector;
-    public Navigator navigator;
+    [HideInInspector] public DataCollector dataCollector;
+    [HideInInspector] public Navigator navigator;
 
-    public enum Mode {scriptSet, menu, game, survey };
-    public Mode mode;
-    private Mode initMode = Mode.game;
+    public enum Mode {menu, game, survey };
+    [HideInInspector] public Mode mode = Mode.game;
 
     private bool pauseState = false;
 
@@ -36,9 +35,9 @@ public class GameController : MonoBehaviour
     {
         dataCollector = FindObjectOfType<DataCollector>();
         navigator = FindObjectOfType<Navigator>();
+
         //print("Game Script: started");
         //StartCoroutine("playerThinksTheyAreThere");
-        if(mode == Mode.scriptSet) mode = initMode;
     }
 
     void playerThinksTheyAreThere()

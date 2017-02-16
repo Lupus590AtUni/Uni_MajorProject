@@ -13,7 +13,7 @@ public class DataCollector : MonoBehaviour
     private GameObject player;
     private GameController gameController;
 
-    public bool recordMode;
+    [HideInInspector] public bool recordMode;
     private float timeTaken;
     private int manualRecalcPathCount;
 

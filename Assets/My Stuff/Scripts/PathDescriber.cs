@@ -70,6 +70,7 @@ public class PathDescriber : MonoBehaviour
 
         for(int i = 0; i < oldPath.corners.Length; i++)
         {
+            print(oldPath.corners[i].ToString());
             newPath[i].position = oldPath.corners[i];
 
             if(i + 1 < oldPath.corners.Length)
