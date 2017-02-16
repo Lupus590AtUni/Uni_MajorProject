@@ -8,8 +8,9 @@ public class GameController : MonoBehaviour
     public DataCollector dataCollector;
     public Navigator navigator;
 
-    public enum Mode {menu, game, survey };
+    public enum Mode {scriptSet, menu, game, survey };
     public Mode mode;
+    private Mode initMode = Mode.game;
 
     private bool pauseState = false;
 
@@ -37,7 +38,7 @@ public class GameController : MonoBehaviour
         navigator = FindObjectOfType<Navigator>();
         //print("Game Script: started");
         //StartCoroutine("playerThinksTheyAreThere");
-
+        if(mode == Mode.scriptSet) mode = initMode;
     }
 
     void playerThinksTheyAreThere()
@@ -53,7 +54,7 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        print("GameController.mode: " + mode.ToString());
+        //print("GameController.mode: " + mode.ToString());
         
         switch(mode)
         {
