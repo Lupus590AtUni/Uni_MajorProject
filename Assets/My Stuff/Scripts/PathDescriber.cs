@@ -107,7 +107,7 @@ public class PathDescriber : MonoBehaviour
 
         for(int i = 0; i < path.Length; i++)
         {
-            
+            //TODO: find out how to combine strings
             str[i] = new string("turn " + path[i].turnWord + " at the " + path[i].landmark.description);
         }
 
