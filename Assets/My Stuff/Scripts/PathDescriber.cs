@@ -70,8 +70,16 @@ public class PathDescriber : MonoBehaviour
 
         for(int i = 0; i < oldPath.corners.Length; i++)
         {
-            print(oldPath.corners[i].ToString());
+            //print(oldPath.corners[i].ToString());
+
+            newPath[i] = new customPath();
+
             newPath[i].position = oldPath.corners[i]; //TODO: Problem is blamed here by unity editor as NullReferenceException
+
+            //newPath[i].position.x = oldPath.corners[i].x;
+           //newPath[i].position.y = oldPath.corners[i].y;
+            //newPath[i].position.z = oldPath.corners[i].z;
+
 
             if(i + 1 < oldPath.corners.Length)
                 newPath[i].heading = findCornerHeading(oldPath.corners[i], oldPath.corners[i + 1]);
@@ -99,7 +107,8 @@ public class PathDescriber : MonoBehaviour
 
         for(int i = 0; i < path.Length; i++)
         {
-            str[i] = "turn " + path[i].turnWord + " at the " + path[i].landmark.description;
+            
+            str[i] = new string("turn " + path[i].turnWord + " at the " + path[i].landmark.description);
         }
 
         return null;
