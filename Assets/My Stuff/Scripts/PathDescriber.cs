@@ -74,7 +74,7 @@ public class PathDescriber : MonoBehaviour
 
             newPath[i] = new customPath();
 
-            newPath[i].position = oldPath.corners[i]; //TODO: Problem is blamed here by unity editor as NullReferenceException
+            newPath[i].position = oldPath.corners[i]; 
 
             //newPath[i].position.x = oldPath.corners[i].x;
            //newPath[i].position.y = oldPath.corners[i].y;
@@ -108,7 +108,9 @@ public class PathDescriber : MonoBehaviour
         for(int i = 0; i < path.Length; i++)
         {
             //TODO: find out how to combine strings
-            str[i] = new string("turn " + path[i].turnWord + " at the " + path[i].landmark.description);
+            
+
+            str[i] = new string("turn " , path[i].turnWord , " at the " , path[i].landmark.description);
         }
 
         return null;
