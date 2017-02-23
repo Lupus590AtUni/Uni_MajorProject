@@ -1,10 +1,10 @@
-Splines with curve to identify corners
+~~Splines with curve to identify corners~~
 
-Curve fitting to humanise the path
+~~Curve fitting to humanise the path~~
 
-To further humanise the path: player is not always given the fastest, priority is making sure the player doesn't get lost - more landmarks, less turns
+future goal? To further humanise the path: player is not always given the fastest, priority is making sure the player doesn't get lost - more landmarks, less turns
 
-colour blind mode? menu option to disable colours?
+~~colour blind mode? menu option to disable colours?~~
 
 Data which could be collected
 * How far the test player diverges from the path

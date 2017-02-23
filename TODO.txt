@@ -6,7 +6,8 @@ preamble - do by 8th
   
   
   destination switching, start location resetting - do by 15th
-    I think I got there button - making progress
+    "I think I got there" button - making progress
+    "I'm lost give me directions from here please" button
   data collection
   
   
