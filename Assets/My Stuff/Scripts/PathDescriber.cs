@@ -66,6 +66,7 @@ public class PathDescriber : MonoBehaviour
 
     public customPath[] convertPathToCustom(NavMeshPath oldPath)
     {
+        //TODO: debug oldPathNodes, place a line or nodes or something
         customPath[] newPath = new customPath[oldPath.corners.Length];
 
         for(int i = 0; i < oldPath.corners.Length; i++)
@@ -110,10 +111,10 @@ public class PathDescriber : MonoBehaviour
             //TODO: find out how to combine strings
             
 
-            str[i] = new string("turn " , path[i].turnWord , " at the " , path[i].landmark.description);
+            str[i] = string.Concat("turn ", path[i].turnWord , " at the " , path[i].landmark.description);
         }
 
-        return null;
+        return str; ;
     }
 
     public string[] convertPathToString(NavMeshPath path)
