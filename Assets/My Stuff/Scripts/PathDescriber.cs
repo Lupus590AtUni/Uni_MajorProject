@@ -24,17 +24,16 @@ public class PathDescriber : MonoBehaviour
         landmarks = FindObjectsOfType<Landmark>();
     }
 
-    private string convertCornerToTurn(Vector3 cornerPos, Vector3 cornerHeading)
+    private string convertCornerToTurn(Vector3 currentHeading, Vector3 newHeading)
     {
-        if(cornerHeading == Vector3.zero)
+        if(newHeading == Vector3.zero)
             return "arrived";
 
-        Vector3 normal = Vector3.Cross(cornerPos, Vector3.up);
+        Vector3 normal = Vector3.Cross(currentHeading, Vector3.up);
 
-        float dot = Vector3.Dot(normal, cornerHeading);
+        float dot = Vector3.Dot(normal, newHeading);
 
-        // TODO: fix
-        if(dot > 0)
+        if(dot < 0)
             return "right";
         else
             return "left";
@@ -77,10 +76,10 @@ public class PathDescriber : MonoBehaviour
             //print(oldPath.corners[i].ToString());
 
             //TODO: don't add if too close
-            /*if(i != 0 && 5 > Mathf.Abs(oldPath.corners[i].magnitude - oldPath.corners[i-1].magnitude)) //i!=0 to prevent error on first index
+            //if(i != 0 && 5 < Mathf.Abs((oldPath.corners[i] - oldPath.corners[i-1]).magnitude)) //i!=0 to prevent error on first index
             {
-                continue;
-            }*/
+              //  continue;
+            }
 
             newPath.Add(new customPath());
 
@@ -103,7 +102,15 @@ public class PathDescriber : MonoBehaviour
 
             newPath[i].landmark = findLandmark(newPath[i].position);
 
-            newPath[i].turnWord = convertCornerToTurn(newPath[i].position, newPath[i].heading);
+            if(i==0)
+            {
+                newPath[i].turnWord = "go";
+            }
+            else
+            {
+                newPath[i].turnWord = convertCornerToTurn(newPath[i - 1].heading, newPath[i].heading);
+            }
+            
         }
 
         return newPath;
@@ -122,9 +129,6 @@ public class PathDescriber : MonoBehaviour
 
         for(int i = 0; i < path.Count; i++)
         {
-            //TODO: find out how to combine strings
-            
-
             str.Add(string.Concat("turn ", path[i].turnWord , " at the " , path[i].landmark.description));
         }
 

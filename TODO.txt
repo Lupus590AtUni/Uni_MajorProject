@@ -1,30 +1,30 @@
-preamble - do by 8th
+preamble
   grey boxes for mock city - done
     bake navmesh - done
-  understand unity pathfinding - understand theory
+  understand unity pathfinding - done
   waypoint system works - done
   
   
   destination switching, start location resetting - do by 15th
-    "I think I got there" button - making progress
-    "I'm lost give me directions from here please" button
+    "I think I got there" button - do by 15th
+    "I'm lost give me directions from here please" button - don't bother?
   data collection
   
   
-  Main Menu - partly framed
-  survey - partly framed
+  Main Menu - partly framed - do by 15th if spare time
+  survey - partly framed - do by 15th if spare time
   
   
-identify corners/junctions - I think is done, can't test due to bug in other stuff  - do by 15th
-  list on hud
+identify corners/junctions - done
+  list on hud - done
   
   
 place landmarks
   See landmark plan
   list on hud - I think is done, can't test due to bug in other stuff - try to do by 22nd
-  update data collection to include landmarks
+  update data collection to include landmarks - do by 15th if spare time
   
-  circle landmark finding with quandrents
+  circle landmark finding with quandrents?
     turn right before landmark
     turn right after landmark
     turn right heading towards landmark
@@ -34,9 +34,9 @@ place landmarks
     give player range finder?
   
 merge lists
-  pair turns with landmarks - I think is done, can't test due to bug in other stuff
+  pair turns with landmarks - done
   remove redundent turns - there will never be any due to the way that unity pathfinding works
-  
+  remove doubled turns - do by 15th
   
 improve with natual language generation
 improve GUI
