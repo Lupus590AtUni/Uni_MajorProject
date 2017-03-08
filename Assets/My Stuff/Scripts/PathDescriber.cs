@@ -33,6 +33,7 @@ public class PathDescriber : MonoBehaviour
 
         float dot = Vector3.Dot(normal, cornerHeading);
 
+        // TODO: fix
         if(dot > 0)
             return "right";
         else
@@ -73,12 +74,18 @@ public class PathDescriber : MonoBehaviour
         {
             //print(oldPath.corners[i].ToString());
 
+            //TODO: don't add if too close
             newPath[i] = new customPath();
 
-            newPath[i].position = oldPath.corners[i]; 
+            newPath[i].position = oldPath.corners[i];
+
+            //https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
+            GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            marker.transform.position = new Vector3(newPath[i].position.x, newPath[i].position.y, newPath[i].position.z);
+
 
             //newPath[i].position.x = oldPath.corners[i].x;
-           //newPath[i].position.y = oldPath.corners[i].y;
+            //newPath[i].position.y = oldPath.corners[i].y;
             //newPath[i].position.z = oldPath.corners[i].z;
 
 
