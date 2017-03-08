@@ -65,17 +65,24 @@ public class PathDescriber : MonoBehaviour
         return heading;
     }
 
-    public customPath[] convertPathToCustom(NavMeshPath oldPath)
+
+
+    public List<customPath> convertPathToCustom(NavMeshPath oldPath)
     {
         //TODO: debug oldPathNodes, place a line or nodes or something
-        customPath[] newPath = new customPath[oldPath.corners.Length];
+        List<customPath> newPath = new List<customPath>();
 
         for(int i = 0; i < oldPath.corners.Length; i++)
         {
             //print(oldPath.corners[i].ToString());
 
             //TODO: don't add if too close
-            newPath[i] = new customPath();
+            /*if(i != 0 && 5 > Mathf.Abs(oldPath.corners[i].magnitude - oldPath.corners[i-1].magnitude)) //i!=0 to prevent error on first index
+            {
+                continue;
+            }*/
+
+            newPath.Add(new customPath());
 
             newPath[i].position = oldPath.corners[i];
 
@@ -102,29 +109,29 @@ public class PathDescriber : MonoBehaviour
         return newPath;
     }
 
-    private string[] naturalLanguageConverter(customPath[] path)
+    private List<string> naturalLanguageConverter(List<customPath> path)
     {
         //LOW: Actually put stuff here
         //LOW: fancier natural language generation
         return null;
     }
 
-    public string[] convertPathToString(customPath[] path)
+    public List<string> convertPathToString(List<customPath> path)
     {
-        string[] str = new string[path.Length];
+        List<string> str = new List<string>();
 
-        for(int i = 0; i < path.Length; i++)
+        for(int i = 0; i < path.Count; i++)
         {
             //TODO: find out how to combine strings
             
 
-            str[i] = string.Concat("turn ", path[i].turnWord , " at the " , path[i].landmark.description);
+            str.Add(string.Concat("turn ", path[i].turnWord , " at the " , path[i].landmark.description));
         }
 
         return str; ;
     }
 
-    public string[] convertPathToString(NavMeshPath path)
+    public List<string> convertPathToString(NavMeshPath path)
     {
         return convertPathToString(convertPathToCustom(path));
     }
