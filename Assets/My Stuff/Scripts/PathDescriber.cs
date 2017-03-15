@@ -68,7 +68,6 @@ public class PathDescriber : MonoBehaviour
 
     public List<customPath> convertPathToCustom(NavMeshPath oldPath)
     {
-        //TODO: debug oldPathNodes, place a line or nodes or something
         List<customPath> newPath = new List<customPath>();
 
         for(int i = 0; i < oldPath.corners.Length; i++)

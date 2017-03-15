@@ -21,7 +21,7 @@ identify corners/junctions - done
   
 place landmarks
   See landmark plan
-  list on hud - I think is done, can't test due to bug in other stuff - try to do by 22nd
+  list on hud - done
   update data collection to include landmarks - do by 15th if spare time
   
   circle landmark finding with quandrents?
