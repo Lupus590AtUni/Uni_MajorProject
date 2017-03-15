@@ -31,9 +31,10 @@ public class Navigator : MonoBehaviour
         agent.destination = gameController.currentGoal.position;
 
 
-        
 
-        //NOTE: debug path state
+
+        //NOTE: debug
+            //path state
         //print("agent.path.status: " + agent.path.status);
         //print("agent.isPathStale: " + agent.isPathStale);
 
@@ -58,8 +59,10 @@ public class Navigator : MonoBehaviour
 
     void LateUpdate()
     {
-        //BUG: does this cause the multiple node making when 'that if' is active? 
-        //Theory: an exception happens in recalcPath which crashes the thread, a new thread on the next update trys again (including placing a new node)
+        //BUG: many nodes
+            //does this cause the multiple node making when 'that if' is active? 
+            //Theory: an exception happens in recalcPath which crashes the thread, a new thread on the next update trys again (including placing a new node)
+        
         //HACK: first path generation - also this seems to be broken
         if(hadfirstUpdate && !gotFirstPath)
         {

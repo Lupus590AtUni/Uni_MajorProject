@@ -91,8 +91,8 @@ public class GameController : MonoBehaviour
 
     void playerThinksTheyAreThere()
     {
-        //LOW: implement and test
-        //Collect Data
+        //TODO: implement and test
+        //TODO: Collect Data
 
         //currentRouteNumber++;
         initGame(currentRouteNumber);
@@ -103,7 +103,8 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //NOTE: debug printout current game mode
+        //NOTE: debug
+            //printout current game mode
         //print("GameController.mode: " + mode.ToString()); 
 
         switch(mode)

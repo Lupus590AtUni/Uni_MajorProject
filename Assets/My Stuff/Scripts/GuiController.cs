@@ -98,7 +98,7 @@ public class GuiController : MonoBehaviour
 
     void controlMenu()
     {
-        //LOW: Main menu
+        //TODO: Main menu
         PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
         GUI.BeginGroup(PauseBox);
         GUI.Box(new Rect(0, 0, pauseBoxSize.x, pauseBoxSize.y), "Paused");
@@ -114,7 +114,7 @@ public class GuiController : MonoBehaviour
 
     void controlSurvey()
     {
-        //LOW: Survey
+        //TODO: Survey
     }
 
 }

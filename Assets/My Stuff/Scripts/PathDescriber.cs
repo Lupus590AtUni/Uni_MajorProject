@@ -44,10 +44,11 @@ public class PathDescriber : MonoBehaviour
     private Landmark findLandmark(Vector3 position) //find the nearest landmark
     {
 
-        Landmark nearest = landmarks[0]; //BUG: Null reference exception - only happens once per run, might be on init
+        Landmark nearest = landmarks[0]; //BUG: init Null reference exception
+                                            //only happens once per run, might be on init
         foreach( Landmark current in landmarks)
         {
-            //LOW: add better criteria
+            //TODO: add better criteria
             if(Vector3.Distance(nearest.transform.position, position) > Vector3.Distance(current.transform.position, position))
             {
                 nearest = current;
@@ -73,7 +74,8 @@ public class PathDescriber : MonoBehaviour
 
         newPath.Add(oldPath[0]); //Ensure first node is added
 
-        //NOTE: may have issues if oldPath.count is less than two
+        //NOTE: potential bug
+            //may have issues if oldPath.count is less than two
         for(int i = 1; i < oldPath.Count-1; i++)
         {
             //add if not too close
@@ -97,7 +99,8 @@ public class PathDescriber : MonoBehaviour
         {
             //print(oldPath.corners[i].ToString());
 
-            //BUG: many things when trying to not add node if too close another node
+            //BUG: many nodes
+                //many things when trying to not add node if too close another node
             if(i != 0 && 1 > Mathf.Abs((oldPath.corners[i] - oldPath.corners[i-1]).magnitude)) //i!=0 to prevent error on first index
             {
                 //continue;
@@ -105,7 +108,8 @@ public class PathDescriber : MonoBehaviour
 
             newPath.Add(new customPath());
 
-            newPath[i].position = oldPath.corners[i]; //BUG: argument out of range exception - only heppens when nodes get skipped with above if
+            newPath[i].position = oldPath.corners[i]; //BUG: many nodes
+                                                        //argument out of range exception - only heppens when nodes get skipped with above if
 
             //when removeing nodes this spam creates
             //https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
