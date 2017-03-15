@@ -105,7 +105,7 @@ public class PathDescriber : MonoBehaviour
 
             newPath.Add(new customPath());
 
-            newPath[i].position = oldPath.corners[i]; //BUG: argument out of range exception - only heppens when nodes get skipped with above iff
+            newPath[i].position = oldPath.corners[i]; //BUG: argument out of range exception - only heppens when nodes get skipped with above if
 
             //when removeing nodes this spam creates
             //https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
