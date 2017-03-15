@@ -33,24 +33,15 @@ public class Navigator : MonoBehaviour
 
         
 
+        //NOTE: debug path state
+        //print("agent.path.status: " + agent.path.status);
+        //print("agent.isPathStale: " + agent.isPathStale);
 
-        print("agent.path.status: " + agent.path.status);
-        print("agent.isPathStale: " + agent.isPathStale);
+        //print("agent.path.corners.Length: " + agent.path.corners.Length);
 
-        print("agent.path.corners.Length: " + agent.path.corners.Length);
-
-        //HACK: or not I guess as this is the problem code
-        List<string> str = pathDescriber.convertPathToString(agent.path);
-
-
-        //guiController.directions.Clear();
-        //for(int i = 0; i<agent.path.corners.Length; i++)
-        {
-            guiController.directions = str; //.Add(str[i]); //goes with problem code
-
-            //HACK this is the actual 'hack'
-            //guiController.directions.Add(agent.path.corners[i].ToString());
-        }
+        
+        List<string> dirStr = pathDescriber.convertPathToString(agent.path);
+        guiController.directions = dirStr;
         
     }
 
