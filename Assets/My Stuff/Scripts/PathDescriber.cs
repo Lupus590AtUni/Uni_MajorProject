@@ -44,7 +44,7 @@ public class PathDescriber : MonoBehaviour
     private Landmark findLandmark(Vector3 position) //find the nearest landmark
     {
 
-        Landmark nearest = landmarks[0];
+        Landmark nearest = landmarks[0]; //BUG: Null reference exception - only happens once per run, might be on init
         foreach( Landmark current in landmarks)
         {
             //LOW: add better criteria
@@ -64,7 +64,30 @@ public class PathDescriber : MonoBehaviour
         return heading;
     }
 
+    //HACK: this entire function is to hide a bug
+    List<customPath> pruneList(List<customPath> oldPath)
+    {
+        //return oldPath; 
 
+        List<customPath> newPath = new List<customPath>();
+
+        newPath.Add(oldPath[0]); //Ensure first node is added
+
+        //NOTE: may have issues if oldPath.count is less than two
+        for(int i = 1; i < oldPath.Count-1; i++)
+        {
+            //add if not too close
+            if(1 < Mathf.Abs((oldPath[i].position.magnitude - oldPath[i-1].position.magnitude))) //i!=0 to prevent error on first index
+            {
+                newPath.Add(oldPath[i]);
+            }
+        }
+
+        //Ensure last node is added
+        //newPath.Add(oldPath[oldPath.Count]);  //BUG: argument out of range exception
+
+        return newPath;
+    }
 
     public List<customPath> convertPathToCustom(NavMeshPath oldPath)
     {
@@ -74,16 +97,17 @@ public class PathDescriber : MonoBehaviour
         {
             //print(oldPath.corners[i].ToString());
 
-            //TODO: don't add if too close
-            //if(i != 0 && 5 < Mathf.Abs((oldPath.corners[i] - oldPath.corners[i-1]).magnitude)) //i!=0 to prevent error on first index
+            //BUG: many things when trying to not add node if too close another node
+            if(i != 0 && 1 > Mathf.Abs((oldPath.corners[i] - oldPath.corners[i-1]).magnitude)) //i!=0 to prevent error on first index
             {
-              //  continue;
+                //continue;
             }
 
             newPath.Add(new customPath());
 
-            newPath[i].position = oldPath.corners[i];
+            newPath[i].position = oldPath.corners[i]; //BUG: argument out of range exception - only heppens when nodes get skipped with above iff
 
+            //when removeing nodes this spam creates
             //https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
             GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             marker.transform.position = new Vector3(newPath[i].position.x, newPath[i].position.y, newPath[i].position.z);
@@ -111,6 +135,8 @@ public class PathDescriber : MonoBehaviour
             }
             
         }
+
+        newPath = pruneList(newPath);
 
         return newPath;
     }
