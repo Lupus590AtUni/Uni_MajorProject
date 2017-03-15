@@ -84,7 +84,7 @@ public class PathDescriber : MonoBehaviour
         }
 
         //Ensure last node is added
-        //newPath.Add(oldPath[oldPath.Count]);  //BUG: argument out of range exception
+        newPath.Add(oldPath[oldPath.Count-1]); 
 
         return newPath;
     }

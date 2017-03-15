@@ -36,7 +36,7 @@ place landmarks
 merge lists
   pair turns with landmarks - done
   remove redundent turns - there will never be any due to the way that unity pathfinding works
-  remove doubled turns - do by 15th
+  remove doubled turns - bug still present, workaround in place
   
 improve with natual language generation
 improve GUI
