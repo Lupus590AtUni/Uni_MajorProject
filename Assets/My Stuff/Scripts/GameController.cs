@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
 
         //TODO: implement and test
         currentRouteNumber++;
-        if(currentRouteNumber > routes.Count) //BUG: null reference exception
+        if(currentRouteNumber > routes.Count) //BUG: null reference exception - I have no routes yet
         {
             if(routeUseWaypoint)
             {
@@ -115,7 +115,13 @@ public class GameController : MonoBehaviour
 
         Destination[] destinations = FindObjectsOfType<Destination>();
 
+        for(int i = 0;i < destinations.Length; i++)
+        {
+            routes.Add(destinations[i]);
+        }
+        routes.Sort();
         //TODO: sort destinations
+        //TODO: add to routes
 
         enterGame();
 
@@ -129,7 +135,7 @@ public class GameController : MonoBehaviour
     {
         //NOTE: debug
             //printout current game mode
-        //print("GameController.mode: " + mode.ToString()); 
+        print("GameController.mode: " + mode.ToString()); 
 
         switch(mode)
         {
