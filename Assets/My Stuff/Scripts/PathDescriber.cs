@@ -112,9 +112,10 @@ public class PathDescriber : MonoBehaviour
                                                         //argument out of range exception - only heppens when nodes get skipped with above if
 
             //when removeing nodes this spam creates
+            //NOTE: debug
+                //node visulaiser
             //https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
-            GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            marker.transform.position = new Vector3(newPath[i].position.x, newPath[i].position.y, newPath[i].position.z);
+            //GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Sphere); marker.transform.position = new Vector3(newPath[i].position.x, newPath[i].position.y, newPath[i].position.z);
 
 
             //newPath[i].position.x = oldPath.corners[i].x;
