@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Route
-{
-    public Transform startPos;
-    public Transform goalPos;
-
-}
-
 public class GameController : MonoBehaviour
 {
     public Transform currentGoal;
@@ -22,8 +15,8 @@ public class GameController : MonoBehaviour
     private bool pauseState = false;
 
 
-    
-    private List<Route> routes;
+    public bool routeUseWaypoint = false; //else use new tech
+    private List<Destination> routes; //Not really routes on their own
     private int currentRouteNumber;
 
     public bool isPaused()
@@ -45,9 +38,45 @@ public class GameController : MonoBehaviour
 
     public void initGame(int routeNumber)
     {
-        //player.transform.position = routes[routeNumber].startPos.position;
-        //currentGoal.position = routes[routeNumber].goalPos.position;
-        navigator.recalcPath();
+        player.transform.position = this.transform.position; //HACK: start position is always...
+                                                                //the game controllers position for simplicity
+        currentGoal.position = routes[routeNumber].transform.position;
+        if(routeUseWaypoint)
+        {
+            //Show waypoint
+            currentGoal.gameObject.SetActive(true);
+            //TODO: disable directions hud eliment
+        }
+        else
+        {
+            //Hide waypoint
+            currentGoal.gameObject.SetActive(false);
+            //TODO: enable directions hud eliment
+            navigator.recalcPath();
+        }
+    }
+
+    void playerThinksTheyAreThere()
+    {
+
+        //TODO: Collect Data
+
+        //TODO: implement and test
+        currentRouteNumber++;
+        if(currentRouteNumber > routes.Count) //BUG: null reference exception
+        {
+            if(routeUseWaypoint)
+            {
+                enterSurvey(); //player has done both routes
+
+            }
+            currentRouteNumber = 0;
+            routeUseWaypoint = true;
+        }
+       
+        initGame(currentRouteNumber);
+
+
     }
 
     public void enterGame()
@@ -84,21 +113,16 @@ public class GameController : MonoBehaviour
         navigator = FindObjectOfType<Navigator>();
         player = GameObject.FindGameObjectWithTag("Player");
 
+        Destination[] destinations = FindObjectsOfType<Destination>();
+
+        //TODO: sort destinations
+
         enterGame();
 
         //print("Game Script: started");
     }
 
-    void playerThinksTheyAreThere()
-    {
-        //TODO: implement and test
-        //TODO: Collect Data
-
-        //currentRouteNumber++;
-        initGame(currentRouteNumber);
-        
-            
-    }
+   
 
 	// Update is called once per frame
 	void Update ()

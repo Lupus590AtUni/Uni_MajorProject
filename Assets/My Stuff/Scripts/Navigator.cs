@@ -29,7 +29,7 @@ public class Navigator : MonoBehaviour
     {
 
         agent.destination = gameController.currentGoal.position;
-
+        this.transform.position = gameController.player.transform.position;
 
 
 
@@ -60,10 +60,11 @@ public class Navigator : MonoBehaviour
     void LateUpdate()
     {
         //BUG: many nodes
-            //does this cause the multiple node making when 'that if' is active? 
-            //Theory: an exception happens in recalcPath which crashes the thread, a new thread on the next update trys again (including placing a new node)
-        
+        //does this cause the multiple node making when 'that if' is active? 
+        //Theory: an exception happens in recalcPath which crashes the thread, a new thread on the next update trys again (including placing a new node)
+
         //HACK: first path generation - also this seems to be broken
+        //TODO: try remove when main menu in place
         if(hadfirstUpdate && !gotFirstPath)
         {
             recalcPath();
