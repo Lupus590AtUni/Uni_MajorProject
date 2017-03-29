@@ -28,7 +28,7 @@ place landmarks
     turn right before landmark
     turn right after landmark
     turn right heading towards landmark
-    turn right headding away from landmark
+    turn right heading away from landmark
     
   ranges?
     give player range finder?
