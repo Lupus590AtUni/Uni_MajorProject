@@ -14,19 +14,19 @@ Data which could be collected:
 
 Questionare:
 * The test players opinions - make these binary choice (Natural language or waypoint):
- * Which guidance technique did they think took them longer
- * Which guidance technique the test player preferred over all
- * Which they consider more immersive
- * Which allowed them to have more appreciation of the game world
- * Naturaul language instuctions where clear?
+  * Which guidance technique did they think took them longer
+  * Which guidance technique the test player preferred over all
+  * Which they consider more immersive
+  * Which allowed them to have more appreciation of the game world
+  * Naturaul language instuctions where clear?
 * does the player drive?
- * Do they use a Sat Nav?
+  * Do they use a Sat Nav?
 * Age Brackets?
 * Gender?
 * Prior Game Experience?
- * What type of games?
- * Regular player?
- * Played on PC before?
+  * What type of games?
+  * Regular player?
+  * Played on PC before?
  
  
  
