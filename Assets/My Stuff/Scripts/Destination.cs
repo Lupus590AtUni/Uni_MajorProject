@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destination : MonoBehaviour
+public class Destination : MonoBehaviour, IComparer<Destination>
 {
 
 	// Use this for initialization
@@ -16,4 +16,9 @@ public class Destination : MonoBehaviour
     {
 		
 	}
+
+    public int Compare(Destination x, Destination y)
+    {
+        return 0;
+    }
 }

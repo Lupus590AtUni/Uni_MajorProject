@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
     {
         player.transform.position = this.transform.position; //HACK: start position is always...
                                                                 //the game controllers position for simplicity
-        currentGoal.position = routes[routeNumber].transform.position;
+        currentGoal.position = routes[routeNumber].transform.position; //BUG: argument out of range
         if(routeUseWaypoint)
         {
             //Show waypoint
@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
 
         //TODO: implement and test
         currentRouteNumber++;
-        if(currentRouteNumber > routes.Count) //BUG: null reference exception - I have no routes yet
+        if(currentRouteNumber > routes.Count) //BUG: null reference exception
         {
             if(routeUseWaypoint)
             {
@@ -122,20 +122,24 @@ public class GameController : MonoBehaviour
             routes.Add(destinations[i]);
         }
 
-        routes.Sort(); 
-                       //TODO: sort destinations
-                       //TODO: add to routes
+        routes.Sort(); //BUG: can't sort due to bad interface on objects
+            //TODO: sort destinations
+            //TODO: add to routes
 
         enterGame();
 
         //print("Game Script: started");
     }
 
-    
+    bool doInit = true;
     // Update is called once per frame
     void Update()
     {
-    
+        if(doInit)
+        {
+            
+            doInit = false;
+        }
 
         //NOTE: debug
             //printout current game mode
