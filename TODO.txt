@@ -1,3 +1,36 @@
+
+Fix bug in route sort
+  work around
+    xy pos to identify routes
+    number into destination object?
+
+Fix bug in route set switching
+
+Implement questions and data collection
+
+Implement Main Menu
+  needs to explain project
+
+compile and 'release' 
+  facebook and computercraft
+
+Report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OLD USELESS
+
 preamble
   grey boxes for mock city - done
     bake navmesh - done
