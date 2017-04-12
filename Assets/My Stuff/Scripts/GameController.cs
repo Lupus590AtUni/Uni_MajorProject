@@ -122,7 +122,7 @@ public class GameController : MonoBehaviour
             routes.Add(destinations[i]);
         }
 
-        routes.Sort(); //BUG: can't sort due to bad interface on objects
+        //routes.Sort(); //BUG: can't sort due to bad interface on objects
             //TODO: sort destinations
             //TODO: add to routes
 
