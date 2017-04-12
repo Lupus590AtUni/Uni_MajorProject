@@ -115,27 +115,31 @@ public class GameController : MonoBehaviour
 
         Destination[] destinations = FindObjectsOfType<Destination>();
 
+        routes = new List<Destination>();
+
         for(int i = 0;i < destinations.Length; i++)
         {
             routes.Add(destinations[i]);
         }
-        routes.Sort();
-        //TODO: sort destinations
-        //TODO: add to routes
+
+        routes.Sort(); 
+                       //TODO: sort destinations
+                       //TODO: add to routes
 
         enterGame();
 
         //print("Game Script: started");
     }
 
-   
-
-	// Update is called once per frame
-	void Update ()
+    
+    // Update is called once per frame
+    void Update()
     {
+    
+
         //NOTE: debug
             //printout current game mode
-        print("GameController.mode: " + mode.ToString()); 
+        //print("GameController.mode: " + mode.ToString()); 
 
         switch(mode)
         {
