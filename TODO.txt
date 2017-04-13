@@ -6,7 +6,7 @@ Fix bug in route sort - done
 
 Fix bug in route set switching - done
 
-Fix bug in waypont not moving
+Fix bug in waypont not moving - done
 
 Add instucctions for follow waypoint
 

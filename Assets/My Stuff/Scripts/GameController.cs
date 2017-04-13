@@ -39,20 +39,20 @@ public class GameController : MonoBehaviour
     public void initGame(int routeNumber)
     {
         player.transform.position = this.transform.position; //HACK: start position is always...
-                                                                //the game controllers position for simplicity
+                                                             //the game controllers position for simplicity
+
         currentGoal.transform.position = routes[routeNumber].transform.position;
+
         if(routeUseWaypoint)
         {
             //Show waypoint
             currentGoal.gameObject.SetActive(true);
             
-            //TODO: disable directions hud eliment
         }
         else
         {
             //Hide waypoint
             currentGoal.gameObject.SetActive(false);
-            //TODO: enable directions hud eliment
             navigator.recalcPath();
         }
     }
@@ -125,8 +125,6 @@ public class GameController : MonoBehaviour
 
         DestionationSorter d = new DestionationSorter();
         routes.Sort(d.Compare);
-            //TODO: sort destinations
-            //TODO: add to routes
 
         enterGame();
 
