@@ -7,10 +7,11 @@ future goal? To further humanise the path: player is not always given the fastes
 ~~colour blind mode? menu option to disable colours?~~
 
 Data which could be collected:
+* Where was the player when they pushed the 'got there' button
 * How far the test player diverges from the path
  * ~~Did they go towards other landmarks (some may look interesting and be disractions)~~
 * How long the test player takes to reach the destination
-* How often the test player asks the game for more directions
+* ~~How often the test player asks the game for more directions~~
 
 Questionare:
 * The test players opinions - make these binary choice (Natural language or waypoint):

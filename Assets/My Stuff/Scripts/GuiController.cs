@@ -130,7 +130,7 @@ public class GuiController : MonoBehaviour
 
     void controlSurvey()
     {
-        //TODO: Survey
+        //TODO: Surveys
     }
 
 }
