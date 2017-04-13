@@ -1,5 +1,5 @@
 
-Fix bug in route sort
+Fix bug in route sort - done
   work around
     xy pos to identify routes
     number into destination object?
