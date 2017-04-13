@@ -44,7 +44,7 @@ public class PathDescriber : MonoBehaviour
     private Landmark findLandmark(Vector3 position) //find the nearest landmark
     {
 
-        Landmark nearest = landmarks[0]; //BUG: init Null reference exception
+        Landmark nearest = landmarks[0]; //LOW BUG: init Null reference exception
                                             //only happens once per run, might be on init
         foreach( Landmark current in landmarks)
         {
@@ -99,7 +99,7 @@ public class PathDescriber : MonoBehaviour
         {
             //print(oldPath.corners[i].ToString());
 
-            //BUG: many nodes
+            //LOW BUG: many nodes
                 //many things when trying to not add node if too close another node
             if(i != 0 && 1 > Mathf.Abs((oldPath.corners[i] - oldPath.corners[i-1]).magnitude)) //i!=0 to prevent error on first index
             {
@@ -108,7 +108,7 @@ public class PathDescriber : MonoBehaviour
 
             newPath.Add(new customPath());
 
-            newPath[i].position = oldPath.corners[i]; //BUG: many nodes
+            newPath[i].position = oldPath.corners[i]; //LOW BUG: many nodes
                                                         //argument out of range exception - only heppens when nodes get skipped with above if
 
             //when removeing nodes this spam creates

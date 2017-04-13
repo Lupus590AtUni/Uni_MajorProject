@@ -4,7 +4,13 @@ Fix bug in route sort - done
     xy pos to identify routes
     number into destination object?
 
-Fix bug in route set switching
+Fix bug in route set switching - done
+
+Fix bug in waypont not moving
+
+Add instucctions for follow waypoint
+
+Better routes or more landmarks
 
 Implement questions and data collection
 

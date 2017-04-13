@@ -40,11 +40,12 @@ public class GameController : MonoBehaviour
     {
         player.transform.position = this.transform.position; //HACK: start position is always...
                                                                 //the game controllers position for simplicity
-        currentGoal.position = routes[routeNumber].transform.position; //BUG: argument out of range
+        currentGoal.transform.position = routes[routeNumber].transform.position;
         if(routeUseWaypoint)
         {
             //Show waypoint
             currentGoal.gameObject.SetActive(true);
+            
             //TODO: disable directions hud eliment
         }
         else
@@ -63,7 +64,7 @@ public class GameController : MonoBehaviour
 
         //TODO: implement and test
         currentRouteNumber++;
-        if(currentRouteNumber > routes.Count) //BUG: null reference exception
+        if(currentRouteNumber >= routes.Count) //BUG: null reference exception
         {
             if(routeUseWaypoint)
             {

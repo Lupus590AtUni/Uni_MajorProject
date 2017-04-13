@@ -59,7 +59,7 @@ public class Navigator : MonoBehaviour
 
     void LateUpdate()
     {
-        //BUG: many nodes
+        //LOW BUG: many nodes
         //does this cause the multiple node making when 'that if' is active? 
         //Theory: an exception happens in recalcPath which crashes the thread, a new thread on the next update trys again (including placing a new node)
 
