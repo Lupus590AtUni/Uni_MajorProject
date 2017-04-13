@@ -8,7 +8,7 @@ Fix bug in route set switching - done
 
 Fix bug in waypont not moving - done
 
-Add instucctions for follow waypoint
+Add instuctions for follow waypoint - done
 
 Better routes or more landmarks
 

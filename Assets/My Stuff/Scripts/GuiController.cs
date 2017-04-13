@@ -14,6 +14,8 @@ public class GuiController : MonoBehaviour
     [SerializeField]
     private Rect directionsBox;
     [SerializeField]
+    private Rect mapMarkerInstuctionBox;
+    [SerializeField]
     private Vector2 pauseBoxSize;
     private Rect PauseBox;
 
@@ -62,7 +64,7 @@ public class GuiController : MonoBehaviour
                             // Normal Hud
                             GUI.BeginGroup(directionsBox);
                             // Make a background box
-                            GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Directions");
+                            GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Instructions");
 
                             int yPos = 20;
 
@@ -72,6 +74,18 @@ public class GuiController : MonoBehaviour
                                 GUI.Label(new Rect(5, yPos, directionsBox.size.x - 5, 1000), directions[i]);
                                 yPos += 15;
                             }
+
+                            GUI.EndGroup();
+                        }
+                        else
+                        {
+                            // Normal Hud
+                            GUI.BeginGroup(mapMarkerInstuctionBox);
+                            // Make a background box
+                            GUI.Box(new Rect(0, 0, mapMarkerInstuctionBox.size.x, mapMarkerInstuctionBox.size.y), "Instructions");
+
+                            
+                            GUI.Label(new Rect(5, 20, directionsBox.size.x - 5, 1000), "Go to the green sphere\n");
 
                             GUI.EndGroup();
                         }
