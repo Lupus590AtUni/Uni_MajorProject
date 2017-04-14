@@ -94,7 +94,7 @@ public class GameController : MonoBehaviour
     public void enterSurvey()
     {
         mode = Mode.survey;
-        
+        pause();
         
     }
 
@@ -126,7 +126,8 @@ public class GameController : MonoBehaviour
         DestionationSorter d = new DestionationSorter();
         routes.Sort(d.Compare);
 
-        enterGame();
+        //enterGame();
+        enterSurvey();
 
         //print("Game Script: started");
     }

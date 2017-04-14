@@ -16,6 +16,9 @@ public class GuiController : MonoBehaviour
     [SerializeField]
     private Rect mapMarkerInstuctionBox;
     [SerializeField]
+    private Vector2 surveyBoxSize;
+    private Rect surveyBox;
+    [SerializeField]
     private Vector2 pauseBoxSize;
     private Rect PauseBox;
 
@@ -128,9 +131,22 @@ public class GuiController : MonoBehaviour
         GUI.EndGroup();
     }
 
+    private enum SurveyQuestion {timeTaken, preference, immersion, appreciation, clarity, satNavUser, age, gamer, rpgPlayer }
+
+    private SurveyQuestion currentQuestion = SurveyQuestion.timeTaken;
     void controlSurvey()
     {
+        surveyBox = new Rect((Screen.width - surveyBoxSize.x) / 2, (Screen.height - surveyBoxSize.y) / 2, surveyBoxSize.x, surveyBoxSize.y);
+        GUI.BeginGroup(surveyBox);
         //TODO: Surveys
+        GUI.Box(new Rect(0, 0, surveyBoxSize.x, surveyBoxSize.y), "User Opinion Survey");
+
+        GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), "Go to the green sphere\n");
+        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing, surveyBoxSize.x - 10, buttonHeight), "Resume"))
+            gameController.resume();
+
+
+        GUI.EndGroup();
     }
 
 }

@@ -20,14 +20,11 @@ Questionare:
   * Which they consider more immersive
   * Which allowed them to have more appreciation of the game world
   * Naturaul language instuctions where clear?
-* does the player drive?
-  * Do they use a Sat Nav?
+* Have they used a Sat Nav in real life before?
 * Age Brackets?
-* Gender?
-* Prior Game Experience?
-  * What type of games?
-  * Regular player?
-  * Played on PC before?
+* Prior Game Experience:
+  * do they consider themselves a game player?
+  * have they played RPGs?
  
  
  
