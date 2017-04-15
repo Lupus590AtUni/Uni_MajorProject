@@ -1,8 +1,5 @@
 
 Fix bug in route sort - done
-  work around
-    xy pos to identify routes
-    number into destination object?
 
 Fix bug in route set switching - done
 
@@ -19,7 +16,7 @@ Implement questions - done
 Implement passive data collect
 
 Implement Main Menu - done
-  needs to explain project
+  needs to explain project - done
 
 compile and 'release' 
   facebook and computercraft
