@@ -81,7 +81,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void InternalLockUpdate()
         {
-            if(Input.GetKeyUp(KeyCode.Escape))
+            //http://answers.unity3d.com/answers/1245241/view.html
+            /*if(Input.GetKeyUp(KeyCode.Escape))
             {
                 m_cursorIsLocked = false;
             }
@@ -99,7 +100,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-            }
+            }*/
         }
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)
