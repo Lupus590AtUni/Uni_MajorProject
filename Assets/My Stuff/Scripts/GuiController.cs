@@ -151,7 +151,7 @@ public class GuiController : MonoBehaviour
     private string[] surveyQuestionsOnUser = { "Do you think the natual language directions were clear enough?", "Have you played this tech-demo before?", "Do you have any experience with using a sat-nav, TomTom or simular device?", "Do you consider yourself a gamer (a computer/video game player)?", "Do you play computer role playing games (CRPGs or RPGs)? This can be Japenise or Westen." };
     void controlSurvey()
     {
-        //BUG: something with the survey
+        
         surveyBox = new Rect((Screen.width - surveyBoxSize.x) / 2, (Screen.height - surveyBoxSize.y) / 2, surveyBoxSize.x, surveyBoxSize.y);
         GUI.BeginGroup(surveyBox);
         GUI.Box(new Rect(0, 0, surveyBoxSize.x, surveyBoxSize.y), "User Opinion Survey");
@@ -172,38 +172,38 @@ public class GuiController : MonoBehaviour
         }
         else if(currentQuestion >= (int)SurveyQuestion.clarity && currentQuestion <= (int)SurveyQuestion.rpgPlayer)
         {
-            GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), surveyQuestionsOnUser[currentQuestion]);
+            GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.clarity]);
             if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 100, surveyBoxSize.x - 10, buttonHeight), "Yes"))
             {
-                surveyResults.Add(surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.mostEviromentlyAware], "true");
+                surveyResults.Add(surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.clarity], "true");
                 currentQuestion++;
             }
             if(GUI.Button(new Rect(5, (buttonHeight + buttonSpacing) * 2 + 100, surveyBoxSize.x - 10, buttonHeight), "No"))
             {
-                surveyResults.Add(surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.mostEviromentlyAware], "false");
+                surveyResults.Add(surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.clarity], "false");
                 currentQuestion++;
             }
             if(GUI.Button(new Rect(5, (buttonHeight + buttonSpacing) * 3 + 100, surveyBoxSize.x - 10, buttonHeight), "Prefer not to answer"))
             {
-                surveyResults.Add(surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.mostEviromentlyAware], "null");
+                surveyResults.Add(surveyQuestionsOnUser[currentQuestion - (int)SurveyQuestion.clarity], "null");
                 currentQuestion++;
             }
         }
-
         else if(currentQuestion == (int) SurveyQuestion.complete)
         {
+            GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), "Sending survey data");
             Analytics.CustomEvent("Survey", surveyResults);
             currentQuestion++;
         }
         else if(currentQuestion == (int) SurveyQuestion.thankyou)
         {
             GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), "Thankyou for participating. Please share this with your friends.");
-            if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing , surveyBoxSize.x - 10, buttonHeight), "Return to Main Menu"))
+            if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 100 , surveyBoxSize.x - 10, buttonHeight), "Return to Main Menu"))
                 gameController.enterMenu();
         }
         else
         {
-            print("GuiController::comtrolSurvey - unhandled question");
+            print("GuiController::comtrolSurvey - unhandled question: "+currentQuestion.ToString());
         }
 
         GUI.EndGroup();
