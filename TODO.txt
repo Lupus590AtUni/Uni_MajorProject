@@ -10,13 +10,15 @@ Fix bug in waypont not moving - done
 
 Add instuctions for follow waypoint - done
 
-Better routes or more landmarks
+Better routes or more landmarks <------------ Important
+
+Add controls to hud
 
 Implement questions - done
 
 Implement passive data collect
 
-Implement Main Menu
+Implement Main Menu - done
   needs to explain project
 
 compile and 'release' 

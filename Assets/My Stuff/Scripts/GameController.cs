@@ -127,8 +127,9 @@ public class GameController : MonoBehaviour
         DestionationSorter d = new DestionationSorter();
         routes.Sort(d.Compare);
 
-        enterGame();
-        //enterSurvey();
+        //enterMenu();
+        //enterGame();
+        enterSurvey();
 
         //print("Game Script: started");
     }

@@ -116,17 +116,27 @@ public class GuiController : MonoBehaviour
 
     }
 
+    string mainMenuText = "Thankyou for downloading this and offering to help me with my project.\n"+
+        "What you have here is a tech demo for an algorithm I have developed \n"+
+        "You will be asked to move to locations within a virtual enviroment with a product of the algorithm as guidance.\n"+
+        "Then, as a control to the experiment, you will be asked to go to more locations with the use of a nav-marker.\n"+
+        "Following this, you will be given a survey which will ask about your opinions of the algoithm.\n"+
+        "It took less than 5 minutes to do a runthrough. There is a pause button (esc) if you can't get a full block of time.\n"+
+        "\n" + 
+        " - Nephi (or on the Internet, Lupus590)";
+
     void controlMenu()
     {
-        //TODO: Main menu
-        PauseBox = new Rect((Screen.width - pauseBoxSize.x) / 2, (Screen.height - pauseBoxSize.y) / 2, pauseBoxSize.x, pauseBoxSize.y);
-        GUI.BeginGroup(PauseBox);
-        GUI.Box(new Rect(0, 0, pauseBoxSize.x, pauseBoxSize.y), "Paused");
-        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing, pauseBoxSize.x - 10, buttonHeight), "Resume"))
-            gameController.resume();
+        int offset = 200;
+        surveyBox = new Rect((Screen.width - (surveyBoxSize.x + offset)) / 2, (Screen.height - surveyBoxSize.y) / 2, surveyBoxSize.x+offset, surveyBoxSize.y);
+        GUI.BeginGroup(surveyBox);
+        GUI.Box(new Rect(0, 0, surveyBoxSize.x+offset, surveyBoxSize.y), "Main Menu");
+        GUI.Label(new Rect(5, 20, surveyBoxSize.x + offset - 5, 1000), mainMenuText );
+        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 200, surveyBoxSize.x + offset - 10, buttonHeight), "Play the Tech-Demo"))
+            gameController.enterGame();
 
-        if(GUI.Button(new Rect(5, buttonHeight * 2 + buttonSpacing * 2, pauseBoxSize.x - 10, buttonHeight), "Main Menu"))
-            gameController.enterMenu();
+        if(GUI.Button(new Rect(5, (buttonHeight + buttonSpacing) * 2 + 200, surveyBoxSize.x + offset - 10, buttonHeight), "Quit"))
+            Application.Quit();
 
 
         GUI.EndGroup();
@@ -141,12 +151,12 @@ public class GuiController : MonoBehaviour
     private string[] surveyQuestionsOnUser = { "Do you think the natual language directions were clear enough?", "Have you played this tech-demo before?", "Do you have any experience with using a sat-nav, TomTom or simular device?", "Do you consider yourself a gamer (a computer/video game player)?", "Do you play computer role playing games (CRPGs or RPGs)? This can be Japenise or Westen." };
     void controlSurvey()
     {
+        //BUG: something with the survey
         surveyBox = new Rect((Screen.width - surveyBoxSize.x) / 2, (Screen.height - surveyBoxSize.y) / 2, surveyBoxSize.x, surveyBoxSize.y);
         GUI.BeginGroup(surveyBox);
-        //TODO: Surveys
         GUI.Box(new Rect(0, 0, surveyBoxSize.x, surveyBoxSize.y), "User Opinion Survey");
 
-        if(currentQuestion >= (int) SurveyQuestion.longestTimeFelt || currentQuestion <= (int) SurveyQuestion.mostEviromentlyAware)
+        if(currentQuestion >= (int) SurveyQuestion.longestTimeFelt && currentQuestion <= (int) SurveyQuestion.mostEviromentlyAware)
         {
             GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), surveyQuestionsOnAlgorithm[currentQuestion]);
             if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 100, surveyBoxSize.x - 10, buttonHeight), "Written directions with landmarks"))
@@ -160,7 +170,7 @@ public class GuiController : MonoBehaviour
                 currentQuestion++;
             }
         }
-        else if(currentQuestion >= (int)SurveyQuestion.clarity || currentQuestion <= (int)SurveyQuestion.rpgPlayer)
+        else if(currentQuestion >= (int)SurveyQuestion.clarity && currentQuestion <= (int)SurveyQuestion.rpgPlayer)
         {
             GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), surveyQuestionsOnUser[currentQuestion]);
             if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 100, surveyBoxSize.x - 10, buttonHeight), "Yes"))
