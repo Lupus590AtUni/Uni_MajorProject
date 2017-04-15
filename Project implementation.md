@@ -8,7 +8,7 @@ future goal? To further humanise the path: player is not always given the fastes
 
 Data which could be collected:
 * Where was the player when they pushed the 'got there' button
-* How far the test player diverges from the path
+* How far the test player diverges from the path - not easy to do
  * ~~Did they go towards other landmarks (some may look interesting and be disractions)~~
 * How long the test player takes to reach the destination
 * ~~How often the test player asks the game for more directions~~
