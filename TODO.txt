@@ -12,7 +12,9 @@ Add instuctions for follow waypoint - done
 
 Better routes or more landmarks
 
-Implement questions and data collection
+Implement questions - done
+
+Implement passive data collect
 
 Implement Main Menu
   needs to explain project

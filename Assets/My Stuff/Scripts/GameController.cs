@@ -28,12 +28,16 @@ public class GameController : MonoBehaviour
     {
         pauseState = true;
         Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void resume()
     {
         pauseState = false;
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void initGame(int routeNumber)
@@ -101,10 +105,7 @@ public class GameController : MonoBehaviour
     public void enterMenu()
     {
         mode = Mode.menu;
-        
-        
-
-
+        pause();
     }
 
     // Use this for initialization
@@ -126,8 +127,8 @@ public class GameController : MonoBehaviour
         DestionationSorter d = new DestionationSorter();
         routes.Sort(d.Compare);
 
-        //enterGame();
-        enterSurvey();
+        enterGame();
+        //enterSurvey();
 
         //print("Game Script: started");
     }
