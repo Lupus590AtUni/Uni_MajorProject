@@ -44,8 +44,7 @@ public class PathDescriber : MonoBehaviour
     private Landmark findLandmark(Vector3 position) //find the nearest landmark
     {
 
-        Landmark nearest = landmarks[0]; //LOW BUG: init Null reference exception
-                                            //only happens once per run, might be on init
+        Landmark nearest = landmarks[0];
         foreach( Landmark current in landmarks)
         {
             //TODO: add better criteria
@@ -148,7 +147,6 @@ public class PathDescriber : MonoBehaviour
 
     private List<string> naturalLanguageConverter(List<customPath> path)
     {
-        //LOW: Actually put stuff here
         //LOW: fancier natural language generation
         return null;
     }

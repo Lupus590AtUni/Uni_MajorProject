@@ -64,7 +64,6 @@ public class Navigator : MonoBehaviour
         //Theory: an exception happens in recalcPath which crashes the thread, a new thread on the next update trys again (including placing a new node)
 
         //HACK: first path generation - also this seems to be broken
-        //TODO: try remove when main menu in place
         if(hadfirstUpdate && !gotFirstPath)
         {
             recalcPath();

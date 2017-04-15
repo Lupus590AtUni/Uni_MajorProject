@@ -65,10 +65,9 @@ public class GameController : MonoBehaviour
     {
 
         //TODO: Collect Data
-
-        //TODO: implement and test
+        
         currentRouteNumber++;
-        if(currentRouteNumber >= routes.Count) //BUG: null reference exception
+        if(currentRouteNumber >= routes.Count)
         {
             if(routeUseWaypoint)
             {

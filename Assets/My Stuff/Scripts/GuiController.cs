@@ -63,9 +63,21 @@ public class GuiController : MonoBehaviour
                     }
                     else
                     {
+                        // Normal Hud
+
+                        // controls Hud
+                        Rect controlsBox = new Rect(directionsBox);
+                        controlsBox.x = Screen.width - (controlsBox.width + controlsBox.x);
+                        GUI.BeginGroup(controlsBox);
+                        GUI.Box(new Rect(0, 0, controlsBox.size.x, controlsBox.size.y), "Default Controls");
+                        GUI.Label(new Rect(5, 20, controlsBox.size.x - 5, 1000), "W = Move forwards");
+                        GUI.Label(new Rect(5, 35, controlsBox.size.x - 5, 1000), "Mouse = Turn");
+                        GUI.Label(new Rect(5, 50, controlsBox.size.x - 5, 1000), "Left click = Indicate that you have arrived");
+                        GUI.EndGroup();
+
                         if(!gameController.routeUseWaypoint)
                         {
-                            // Normal Hud
+                            // Landmark Text Hud
                             GUI.BeginGroup(directionsBox);
                             // Make a background box
                             GUI.Box(new Rect(0, 0, directionsBox.size.x, directionsBox.size.y), "Instructions");
@@ -83,7 +95,7 @@ public class GuiController : MonoBehaviour
                         }
                         else
                         {
-                            // Normal Hud
+                            // Waypoint Hud
                             GUI.BeginGroup(mapMarkerInstuctionBox);
                             // Make a background box
                             GUI.Box(new Rect(0, 0, mapMarkerInstuctionBox.size.x, mapMarkerInstuctionBox.size.y), "Instructions");
@@ -120,6 +132,7 @@ public class GuiController : MonoBehaviour
         "What you have here is a tech demo for an algorithm I have developed \n"+
         "You will be asked to move to locations within a virtual enviroment with a product of the algorithm as guidance.\n"+
         "Then, as a control to the experiment, you will be asked to go to more locations with the use of a nav-marker.\n"+
+        "In both methods, you are expected to tell the demo when you think you have gotten to the destinations. This is done with a left click (unless you have changed the controlls).\n"+
         "Following this, you will be given a survey which will ask about your opinions of the algoithm.\n"+
         "It took less than 5 minutes to do a runthrough. There is a pause button (esc) if you can't get a full block of time.\n"+
         "\n" + 
@@ -132,10 +145,10 @@ public class GuiController : MonoBehaviour
         GUI.BeginGroup(surveyBox);
         GUI.Box(new Rect(0, 0, surveyBoxSize.x+offset, surveyBoxSize.y), "Main Menu");
         GUI.Label(new Rect(5, 20, surveyBoxSize.x + offset - 5, 1000), mainMenuText );
-        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 200, surveyBoxSize.x + offset - 10, buttonHeight), "Play the Tech-Demo"))
+        if(GUI.Button(new Rect(5, buttonHeight + buttonSpacing + 225, surveyBoxSize.x + offset - 10, buttonHeight), "Play the Tech-Demo"))
             gameController.enterGame();
 
-        if(GUI.Button(new Rect(5, (buttonHeight + buttonSpacing) * 2 + 200, surveyBoxSize.x + offset - 10, buttonHeight), "Quit"))
+        if(GUI.Button(new Rect(5, (buttonHeight + buttonSpacing) * 2 + 225, surveyBoxSize.x + offset - 10, buttonHeight), "Quit"))
             Application.Quit();
 
 

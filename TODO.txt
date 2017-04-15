@@ -12,7 +12,7 @@ Add instuctions for follow waypoint - done
 
 Better routes or more landmarks <------------ Important
 
-Add controls to hud
+Add controls to hud - done
 
 Implement questions - done
 
