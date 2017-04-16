@@ -222,4 +222,10 @@ public class GuiController : MonoBehaviour
         GUI.EndGroup();
     }
 
+    public void resetSurvey()
+    {
+        currentQuestion = (int)SurveyQuestion.longestTimeFelt;
+        surveyResults = new Dictionary<string, object>();
+    }
+
 }

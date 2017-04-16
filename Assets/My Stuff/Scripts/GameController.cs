@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public DataCollector dataCollector;
     [HideInInspector] public Navigator navigator;
     [HideInInspector] public GameObject player;
+    [HideInInspector] public GuiController guiController;
 
     public enum Mode {menu, game, survey };
     [HideInInspector] public Mode mode; //set in start
@@ -88,7 +89,7 @@ public class GameController : MonoBehaviour
     {
         mode = Mode.game;
         resume();
-
+        routeUseWaypoint = false;
         currentRouteNumber = 0;
         initGame(currentRouteNumber);
         
@@ -99,6 +100,7 @@ public class GameController : MonoBehaviour
     {
         mode = Mode.survey;
         pause();
+        guiController.resetSurvey();
         
     }
 
@@ -114,6 +116,7 @@ public class GameController : MonoBehaviour
         dataCollector = FindObjectOfType<DataCollector>();
         navigator = FindObjectOfType<Navigator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        guiController = FindObjectOfType<GuiController>();
 
         Destination[] destinations = FindObjectsOfType<Destination>();
 
