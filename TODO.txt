@@ -9,6 +9,10 @@ Add instuctions for follow waypoint - done
 
 Better routes or more landmarks <------------ Important
 
+Improve clarity of initual landmark description
+
+Make switch to nav clearer
+
 Add controls to hud - done
 
 Implement questions - done
