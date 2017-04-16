@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour
     {
 
         //TODO: Collect Data
+        dataCollector.sendData(currentRouteNumber, routeUseWaypoint);
         
         currentRouteNumber++;
         if(currentRouteNumber >= routes.Count)

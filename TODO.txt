@@ -13,7 +13,7 @@ Add controls to hud - done
 
 Implement questions - done
 
-Implement passive data collect
+Implement passive data collect - done
 
 Implement Main Menu - done
   needs to explain project - done

@@ -37,7 +37,7 @@ public class DataCollector : MonoBehaviour
         }
 	}
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         if(recordMode && !gameController.isPaused())
         {
@@ -48,6 +48,29 @@ public class DataCollector : MonoBehaviour
             playerLook.Add(player.transform.forward); //http://answers.unity3d.com/questions/425734/which-direction-is-character-is-facing.html
         }
     }
+    */
+
+    public void sendData(int routeNumber, bool usingWaypoint)
+    {
+        Dictionary<string, object> data = new Dictionary<string, object>();
+        string routeID = "Route "+routeNumber.ToString()+" using ";
+
+        if(usingWaypoint)
+        {
+            routeID += "waypoint";
+        }
+        else
+        {
+            routeID += "landmarks";
+        }
+
+        data.Add("playerEndPos", player.transform.position.ToString());
+        data.Add("timeTaken", timeTaken.ToString());
+        data.Add("destinationPos", gameController.currentGoal.transform.position.ToString());
+        data.Add("playerDestiationDistance", Mathf.Abs((gameController.currentGoal.transform.position - player.transform.position).magnitude).ToString());
 
 
+        Analytics.CustomEvent(routeID, data);
+        timeTaken = 0;
+    }
 }
