@@ -72,8 +72,9 @@ public class GuiController : MonoBehaviour
                         GUI.Box(new Rect(0, 0, controlsBox.size.x, controlsBox.size.y), "Default Controls");
                         GUI.Label(new Rect(5, 20, controlsBox.size.x - 5, 1000), "W = Move forwards");
                         GUI.Label(new Rect(5, 35, controlsBox.size.x - 5, 1000), "Mouse = Turn");
-                        GUI.Label(new Rect(5, 50, controlsBox.size.x - 5, 1000), "Left click = Indicate that you have arrived");
-                        GUI.Label(new Rect(5, 65, controlsBox.size.x - 5, 1000), "Left Shift = Sprint");
+                        GUI.Label(new Rect(5, 50, controlsBox.size.x - 5, 1000), "Left Shift = Sprint");
+                        GUI.Label(new Rect(5, 65, controlsBox.size.x - 5, 1000), "Left click = Indicate that you have arrived");
+
                         GUI.EndGroup();
 
                         if(!gameController.routeUseWaypoint)
