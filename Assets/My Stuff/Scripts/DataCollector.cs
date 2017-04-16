@@ -70,7 +70,7 @@ public class DataCollector : MonoBehaviour
         data.Add("playerDestiationDistance", Mathf.Abs((gameController.currentGoal.transform.position - player.transform.position).magnitude).ToString());
 
 
-        Analytics.CustomEvent(routeID, data);
+        Analytics.CustomEvent("Iteration " + gameController.timesPlayed.ToString() + " "+routeID, data);
         timeTaken = 0;
     }
 }

@@ -150,8 +150,10 @@ public class GuiController : MonoBehaviour
             gameController.enterGame();
 
         if(GUI.Button(new Rect(5, (buttonHeight + buttonSpacing) * 2 + 225, surveyBoxSize.x + offset - 10, buttonHeight), "Quit"))
+        {
+            PlayerPrefs.SetInt("timesPlayed", gameController.timesPlayed);
             Application.Quit();
-
+        }
 
         GUI.EndGroup();
     }
@@ -206,7 +208,7 @@ public class GuiController : MonoBehaviour
         else if(currentQuestion == (int) SurveyQuestion.complete)
         {
             GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), "Sending survey data");
-            Analytics.CustomEvent("Survey", surveyResults);
+            Analytics.CustomEvent("Iteration "+gameController.timesPlayed.ToString()+" Survey", surveyResults);
             currentQuestion++;
         }
         else if(currentQuestion == (int) SurveyQuestion.thankyou)

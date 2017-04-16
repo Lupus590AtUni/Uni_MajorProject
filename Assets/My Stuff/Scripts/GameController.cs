@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [HideInInspector] public int timesPlayed;
     public Transform currentGoal;
     [HideInInspector] public DataCollector dataCollector;
     [HideInInspector] public Navigator navigator;
@@ -64,8 +65,6 @@ public class GameController : MonoBehaviour
 
     void playerThinksTheyAreThere()
     {
-
-        //TODO: Collect Data
         dataCollector.sendData(currentRouteNumber, routeUseWaypoint);
         
         currentRouteNumber++;
@@ -113,6 +112,7 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        timesPlayed = PlayerPrefs.GetInt("timesPlayed");
         dataCollector = FindObjectOfType<DataCollector>();
         navigator = FindObjectOfType<Navigator>();
         player = GameObject.FindGameObjectWithTag("Player");
