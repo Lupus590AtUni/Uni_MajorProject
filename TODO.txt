@@ -7,7 +7,7 @@ Fix bug in waypont not moving - done
 
 Add instuctions for follow waypoint - done
 
-Better routes or more landmarks <------------ Important
+Better routes or more landmarks -done
 
 Improve clarity of initual landmark description
 
