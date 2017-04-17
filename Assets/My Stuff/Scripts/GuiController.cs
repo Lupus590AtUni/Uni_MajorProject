@@ -209,7 +209,7 @@ public class GuiController : MonoBehaviour
         else if(currentQuestion == (int) SurveyQuestion.complete)
         {
             GUI.Label(new Rect(5, 20, surveyBoxSize.x - 5, 1000), "Sending survey data");
-            Analytics.CustomEvent("Iteration "+gameController.timesPlayed.ToString()+" Survey", surveyResults);
+            Analytics.CustomEvent("Session "+gameController.timesPlayed.ToString()+" Survey", surveyResults);
             currentQuestion++;
         }
         else if(currentQuestion == (int) SurveyQuestion.thankyou)
