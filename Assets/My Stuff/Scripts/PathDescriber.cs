@@ -145,16 +145,13 @@ public class PathDescriber : MonoBehaviour
         return newPath;
     }
 
-    private List<string> naturalLanguageConverter(List<customPath> path)
-    {
-        //LOW: fancier natural language generation
-        return null;
-    }
+   
 
     public List<string> convertPathToString(List<customPath> path)
     {
         List<string> str = new List<string>();
 
+        //LOW: fancier natural language generation
         for(int i = 0; i < path.Count; i++)
         {
             str.Add(string.Concat("turn ", path[i].turnWord , " at the " , path[i].landmark.description));
