@@ -72,7 +72,8 @@ public class GameController : MonoBehaviour
         {
             if(routeUseWaypoint)
             {
-                enterSurvey(); //player has done both routes
+                //enterSurvey(); //player has done both routes
+                enterGame();
 
             }
             currentRouteNumber = 0;
@@ -130,8 +131,8 @@ public class GameController : MonoBehaviour
         DestionationSorter d = new DestionationSorter();
         routes.Sort(d.Compare);
 
-        enterMenu();
-        //enterGame();
+        //enterMenu();
+        enterGame();
         //enterSurvey();
 
         //print("Game Script: started");

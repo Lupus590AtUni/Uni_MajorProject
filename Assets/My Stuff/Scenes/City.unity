@@ -1040,9 +1040,8 @@ GameObject:
   - component: {fileID: 153090225}
   - component: {fileID: 153090224}
   - component: {fileID: 153090223}
-  - component: {fileID: 153090227}
   m_Layer: 0
-  m_Name: d red sphere (1)
+  m_Name: red sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,17 +1122,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 153090221}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &153090227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 153090221}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &155573935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,9 +3649,8 @@ GameObject:
   - component: {fileID: 627300766}
   - component: {fileID: 627300765}
   - component: {fileID: 627300764}
-  - component: {fileID: 627300768}
   m_Layer: 0
-  m_Name: d purple cube (7)
+  m_Name: purple cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3744,17 +3731,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 627300762}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &627300768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 627300762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &635408563
 GameObject:
   m_ObjectHideFlags: 0
@@ -6083,9 +6059,8 @@ GameObject:
   - component: {fileID: 1008870641}
   - component: {fileID: 1008870640}
   - component: {fileID: 1008870639}
-  - component: {fileID: 1008870643}
   m_Layer: 0
-  m_Name: d purple cube (1)
+  m_Name: purple cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6166,17 +6141,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1008870637}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1008870643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1008870637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1010538820
 GameObject:
   m_ObjectHideFlags: 0
@@ -7700,9 +7664,8 @@ GameObject:
   - component: {fileID: 1265366860}
   - component: {fileID: 1265366859}
   - component: {fileID: 1265366858}
-  - component: {fileID: 1265366862}
   m_Layer: 0
-  m_Name: d blue capsule (4)
+  m_Name: blue capsule (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7784,17 +7747,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265366856}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1265366862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1265366856}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1306739964
 GameObject:
   m_ObjectHideFlags: 0
@@ -8738,9 +8690,8 @@ GameObject:
   - component: {fileID: 1447803083}
   - component: {fileID: 1447803082}
   - component: {fileID: 1447803081}
-  - component: {fileID: 1447803085}
   m_Layer: 0
-  m_Name: d red sphere
+  m_Name: red sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8821,17 +8772,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447803079}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1447803085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1447803079}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1487377912
 GameObject:
   m_ObjectHideFlags: 0
