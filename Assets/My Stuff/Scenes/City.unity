@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 153090221}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
   m_Name: 
@@ -3750,7 +3750,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 627300762}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
   m_Name: 
@@ -4286,7 +4286,7 @@ GameObject:
   - component: {fileID: 736571348}
   - component: {fileID: 736571347}
   m_Layer: 0
-  m_Name: d red cylinder (2)
+  m_Name: red cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4937,8 +4937,9 @@ GameObject:
   - component: {fileID: 811551498}
   - component: {fileID: 811551497}
   - component: {fileID: 811551496}
+  - component: {fileID: 811551500}
   m_Layer: 0
-  m_Name: blue capsule (8)
+  m_Name: dd blue capsule (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5020,6 +5021,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811551494}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &811551500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 811551494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827016005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,7 +6172,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1008870637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
   m_Name: 
@@ -7778,7 +7790,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265366856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
   m_Name: 
@@ -8815,7 +8827,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447803079}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfefca4324c318e4189f13b119987fd9, type: 3}
   m_Name: 
