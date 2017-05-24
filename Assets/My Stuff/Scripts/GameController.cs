@@ -176,7 +176,7 @@ public class GameController : MonoBehaviour
                         if(Input.GetButtonUp("Pause"))
                         {
                             
-                            pause();
+                            //pause();
                             
                         }
                     }
