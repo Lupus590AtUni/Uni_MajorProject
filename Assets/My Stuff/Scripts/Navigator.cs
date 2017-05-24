@@ -27,7 +27,9 @@ public class Navigator : MonoBehaviour
 
     public void recalcPath() //recalculate the path and send to gui controller
     {
-
+        agent.speed = Mathf.Infinity;
+        agent.acceleration = Mathf.Infinity;
+        agent.angularSpeed = Mathf.Infinity;
         agent.destination = gameController.currentGoal.position;
         this.transform.position = gameController.player.transform.position;
 

@@ -73,11 +73,15 @@ public class GameController : MonoBehaviour
             if(routeUseWaypoint)
             {
                 //enterSurvey(); //player has done both routes
-                enterGame();
+                //enterGame();
+                Application.Quit();
 
             }
-            currentRouteNumber = 0;
-            routeUseWaypoint = true;
+            else
+            {
+                currentRouteNumber = 0;
+                routeUseWaypoint = true;
+            }
         }
        
         initGame(currentRouteNumber);

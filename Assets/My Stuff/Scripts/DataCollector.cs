@@ -52,6 +52,7 @@ public class DataCollector : MonoBehaviour
 
     public void sendData(int routeNumber, bool usingWaypoint)
     {
+        /*
         Dictionary<string, object> data = new Dictionary<string, object>();
         string routeID = "Route "+routeNumber.ToString()+" using ";
 
@@ -72,5 +73,6 @@ public class DataCollector : MonoBehaviour
 
         Analytics.CustomEvent("Session " + gameController.timesPlayed.ToString() + " "+routeID, data);
         timeTaken = 0;
+        */
     }
 }
