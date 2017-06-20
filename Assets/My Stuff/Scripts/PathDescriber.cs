@@ -64,7 +64,7 @@ public class PathDescriber : MonoBehaviour
         return heading;
     }
 
-    //HACK: this entire function is to hide a bug
+    //HACK: this entire function is a work around for a bug
     List<customPath> pruneList(List<customPath> oldPath)
     {
         //return oldPath; 
